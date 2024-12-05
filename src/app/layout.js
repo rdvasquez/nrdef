@@ -21,6 +21,13 @@ export default function RootLayout({ children }) {
               <UserButton />
             </SignedIn>
           </header>
+          <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Events</a>
+            <a href="#">Resources</a>
+            <a href="#">Contact</a>
+          </nav>
           <main>{children}</main>
         </body>
       </html>

@@ -24,11 +24,10 @@ export default function Header() {
               height={200}
               alt="logo"
             />
-            <p>
-              “How beautiful are the feet <br />
-              of those who bring good news” <br />
+            <span>
+              “How beautiful are the feet of those who bring good news” <br />
               Romans 10:15
-            </p>
+            </span>
           </div>
           <nav className="nav">
             <Link href="/">Home</Link>
@@ -36,28 +35,20 @@ export default function Header() {
             <Link href="/resources">Resources</Link>
             <Link href="/events">Events</Link>
             <Link href="/contact">Contact</Link>
-          </nav>
-        </header>
-        <div className="clerkHeader">
-          <div className="user-nav">
-            <span>
+            <div className="signIn">
               <SignedIn>
                 <UserButton />
               </SignedIn>
-            </span>
-          </div>
-        </div>
-
-        <div className="rightside_child">
-          <div className="clerknav">
-            <SignedIn>
-              <SignOutButton />
-            </SignedIn>
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
-          </div>
-        </div>
+              <SignedIn>
+                <SignOutButton />
+              </SignedIn>
+              <SignedOut>
+                <SignInButton />
+              </SignedOut>
+              <button className="joinUs">Join us</button>
+            </div>
+          </nav>
+        </header>
       </body>
     </ClerkProvider>
   );

@@ -1,24 +1,24 @@
-.textContainer {
+.heroSection {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: center center;
+  text-align: left;
+  max-width: 1000px;
   gap: 20px;
-  max-width: 800px; /* Limit container width */
-  margin: 0 auto; /* Center content */
+  margin-left: 10px;
 }
 
-.title {
+.h1 {
   font-size: 24px;
-  font-weight: bold;
-  line-height: 1.2; /* Compress vertical space */
-  max-width: 400px; /* Compress title width */
-  word-wrap: break-word; /* Wrap long words */
+  font-weight: 100;
+  line-height: 1.2;
+  max-width: 900px;
+  word-wrap: break-word;
 }
 
-.description {
-  font-size: 16px;
+.span {
+  font-size: 20px;
   color: #555;
-  line-height: 1.5; /* Compress vertical space */
-  max-width: 400px; /* Compress description width */
-  word-wrap: break-word; /* Wrap long words */
+  line-height: 1.5;
+  max-width: 400px;
+  word-wrap: break-word;
 }

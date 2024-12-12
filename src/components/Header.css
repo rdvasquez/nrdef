@@ -9,7 +9,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 5px;
 }
 
 .leftside-header {
@@ -20,23 +19,28 @@ body {
   font-style: italic;
 }
 
-nav {
+.center-header {
   display: flex;
-  justify-content: space-evenly;
-  color: #333;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 20;
+  font-weight: 200;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
   position: relative;
 }
 
 .signIn {
   position: absolute;
-  top: -30px;
-  right: 20px;
+  top: 20px;
+  right: -90px;
 }
 
-.joinUs {
+.button {
   position: absolute;
-  top: 1px;
-  left: -100px;
+  top: 33px;
+  right: -70px;
 }
 
 .nav a {
@@ -48,15 +52,6 @@ nav {
 
 nav a:hover {
   color: #007bff;
-}
-
-.clerkHeader {
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
-  padding: 20px;
-  background-color: #f8f9fa; /* Light background */
-  border-bottom: 1px solid #ddd;
 }
 
 button {

@@ -1,0 +1,43 @@
+.About {
+  font-family: sans-serif;
+  font-size: 45px;
+  font-weight: 200;
+  line-height: 1;
+  word-wrap: break-word;
+  color: #333;
+  margin-top: 30px;
+  margin: 20px;
+  padding: 29px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.h2 {
+  color: #2980b9;
+  margin-bottom: 10px;
+}
+
+.ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.li {
+  margin-bottom: 10px;
+}
+
+.img {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}

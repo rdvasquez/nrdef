@@ -1,23 +1,39 @@
 import React from "react";
 import Image from "next/image";
+import styles from "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer container="footer">
-      <div className="leftSide-footer">
+    <footer className={styles.footer}>
+      <div className={styles.leftSideFooter}>
         <Image
-          className="logo"
-          src="/logo.png"
-          width={200}
-          height={200}
-          alt="logo"
+          className="footerImage"
+          src="/feet.png"
+          layout="fill"
+          objectFit="cover"
+          alt="fellowship"
         />
-        <span className="verse">
-          “How beautiful are the feet of those who bring good news” Romans 10:15
-        </span>
-        <button className="privacy">Privacy Policy</button>
-        <button className="copyright">Copyright Policy</button>
       </div>
+      <Image
+        className={styles.logo}
+        src="/logo.png"
+        width={200}
+        height={200}
+        alt="logo"
+      />
+      <span className={styles.verse}>
+        “How beautiful are the feet of those who bring good news” Romans 10:15
+      </span>
+      {/* <Image
+          className={styles.footerPhoto}
+          src="/feet.png"
+          width={800}
+          height={400}
+          alt="mainImage"
+        /> */}
+      <button className={styles.privacy}>Privacy Policy</button>
+      <button className={styles.copyright}>Copyright Policy</button>
+      {/* </div> */}
     </footer>
   );
 }

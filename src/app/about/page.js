@@ -1,4 +1,3 @@
-import Image from "next/image";
 import "./page.module.css";
 
 export default function About() {
@@ -20,13 +19,6 @@ export default function About() {
             To represent evangelical members in the wider Diocese of Norwich
           </li>
         </ul>
-
-        <Image
-          src="/nrcathedral.jpeg"
-          width={900}
-          height={450}
-          alt="the Norwich Cathedral"
-        />
       </div>
     </div>
   );

@@ -1,0 +1,52 @@
+.footerImage {
+  background: url("/feet.png");
+  color: white;
+  position: absolute;
+  width: 100vw;
+  height: 400px;
+  z-index: -2; /* Push image to the back */
+  overflow: hidden; /* Prevents content overflow */
+}
+
+/* .leftSide-footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+} */
+
+.footer .logo {
+  margin-bottom: 20px;
+}
+
+.footer .verse {
+  font-size: 1.2em;
+  display: block;
+  margin-bottom: 20px;
+}
+/* 
+.footer .footer-photo {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  border-radius: 8px;
+} */
+
+.footer button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.footer button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.styles.verse {
+  font-style: italic;
+  font-family: serif;
+}

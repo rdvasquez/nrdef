@@ -6,20 +6,48 @@ body {
 }
 
 .header {
+  font-family: "Inter", sans-serif;
+  position: relative;
+  z-index: 2; /* Brings header content above the overlay */
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
+  color: white; /* White text for readability */
+  padding: 20px;
+}
+
+.image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 400px;
+  z-index: -2; /* Push image to the back */
+  overflow: hidden; /* Prevents content overflow */
 }
 
 .leftside-header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-style: italic;
+  font-family: serif;
+  font-size: 1em;
+}
+/* 
+.verse {
+  flex-direction: column;
   font-family: serif;
   justify-content: space-between;
   align-items: center;
   font-style: italic;
-}
+  position: absolute;
+  left: 10px;
+} */
 
-.center-header {
+.navbar {
   display: flex;
   text-decoration: none;
   font-family: sans-serif;
@@ -31,53 +59,47 @@ body {
   position: relative;
 }
 
-.signIn {
-  position: absolute;
-  top: 20px;
-  right: -90px;
-}
-
-.button {
-  position: absolute;
-  top: 33px;
-  right: -70px;
-}
-
-.nav a {
+.navbar a {
   text-decoration: none;
-  font-size: 1rem;
+  color: white;
   font-weight: bold;
-  padding: 10px 20px;
 }
 
-nav a:hover {
+.navbar a:hover {
   color: #007bff;
 }
 
-button {
-  display: flex;
-  flex-direction: column;
+.Joinus {
   background-color: #007bff;
   color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 5px 10px;
+  justify-content: center;
+  border: 4px;
+  border-radius: 2px;
   font-size: 14px;
   cursor: pointer;
+  /* position: relative; */
+  /* right: 70px; */
+}
+
+.signIn {
+  flex-direction: column;
+  margin: 10px;
+  /* border: 4px; */
+  font-size: 14px;
+  /* padding: 2px; */
+  /* border-radius: 4px; */
+  cursor: pointer;
+  /* position: relative; */
+  top: 50px;
 }
 
 button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: #0056b3;
 }
 
 @media (max-width: 768px) {
   .clerkHeader {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .rightside_child {
-    justify-content: center;
-    margin-top: 10px;
   }
 }

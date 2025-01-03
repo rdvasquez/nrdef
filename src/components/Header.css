@@ -8,14 +8,16 @@ body {
 .header {
   font-family: "Inter", sans-serif;
   position: relative;
-  z-index: 2; /* Brings header content above the overlay */
+  z-index: -2; /* Brings header content above the overlay */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  color: white; /* White text for readability */
+  color: white;
   padding: 20px;
+  margin-bottom: 60px;
+  border: 20px;
 }
 
 .image-wrapper {
@@ -23,39 +25,33 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 400px;
-  z-index: -2; /* Push image to the back */
-  overflow: hidden; /* Prevents content overflow */
+  height: 300px;
+  z-index: -2;
+  overflow: hidden;
 }
 
 .leftside-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-style: italic;
-  font-family: serif;
-  font-size: 1em;
 }
-/* 
+
 .verse {
   flex-direction: column;
   font-family: serif;
-  justify-content: space-between;
   align-items: center;
   font-style: italic;
-  position: absolute;
-  left: 10px;
-} */
+}
 
 .navbar {
   display: flex;
   text-decoration: none;
   font-family: sans-serif;
   font-size: 20;
-  font-weight: 200;
+  font-weight: 100;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 23px;
   position: relative;
 }
 
@@ -69,28 +65,24 @@ body {
   color: #007bff;
 }
 
+.signIn {
+  margin-right: 15px; /* Adds space to the right of the Sign In button */
+  flex-direction: column;
+  font-size: 14px;
+  border: 10px;
+  cursor: pointer;
+  top: 50px;
+}
+
 .Joinus {
   background-color: #007bff;
   color: white;
   justify-content: center;
-  border: 4px;
-  border-radius: 2px;
+  border: 10px;
   font-size: 14px;
   cursor: pointer;
-  /* position: relative; */
-  /* right: 70px; */
-}
-
-.signIn {
-  flex-direction: column;
-  margin: 10px;
-  /* border: 4px; */
-  font-size: 14px;
-  /* padding: 2px; */
-  /* border-radius: 4px; */
-  cursor: pointer;
-  /* position: relative; */
   top: 50px;
+  margin-left: 15px; /* Adds space to the left of the Sign Up button */
 }
 
 button:hover {

@@ -1,0 +1,24 @@
+heroSection {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Changed to column for vertical alignment */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 10; /* Keep the hero section on top */
+  margin-bottom: 50%; /* Provide enough space to separate from the footer */
+  padding: 30rem; /* Adjust padding for the desired space around content */
+  width: 100%; /* Ensure the hero section takes the full width of the viewport */
+  font-size: 24px;
+}
+
+.heroImage {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50rem; /* Provide margin at the bottom to create space between elements */
+  border-radius: 5rem;
+}
+
+h1 {
+  margin-bottom: 10rem; /* Add margin below the heading */
+}

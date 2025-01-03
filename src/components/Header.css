@@ -6,83 +6,92 @@ body {
 }
 
 .header {
+  font-family: "Inter", sans-serif;
+  position: relative;
+  z-index: -2; /* Brings header content above the overlay */
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 5px;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  margin-bottom: 60px;
+  border: 20px;
+}
+
+.image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 300px;
+  z-index: -2;
+  overflow: hidden;
 }
 
 .leftside-header {
   display: flex;
-  font-family: serif;
   justify-content: space-between;
+  align-items: center;
+}
+
+.verse {
+  flex-direction: column;
+  font-family: serif;
   align-items: center;
   font-style: italic;
 }
 
-nav {
+.navbar {
   display: flex;
-  justify-content: space-evenly;
-  color: #333;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 20;
+  font-weight: 100;
+  justify-content: space-between;
+  align-items: center;
+  gap: 23px;
   position: relative;
 }
 
-.signIn {
-  position: absolute;
-  top: -30px;
-  right: 20px;
-}
-
-.joinUs {
-  position: absolute;
-  top: 1px;
-  left: -100px;
-}
-
-.nav a {
+.navbar a {
   text-decoration: none;
-  font-size: 1rem;
+  color: white;
   font-weight: bold;
-  padding: 10px 20px;
 }
 
-nav a:hover {
+.navbar a:hover {
   color: #007bff;
 }
 
-.clerkHeader {
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
-  padding: 20px;
-  background-color: #f8f9fa; /* Light background */
-  border-bottom: 1px solid #ddd;
+.signIn {
+  margin-right: 15px; /* Adds space to the right of the Sign In button */
+  flex-direction: column;
+  font-size: 14px;
+  border: 10px;
+  cursor: pointer;
+  top: 50px;
 }
 
-button {
-  display: flex;
-  flex-direction: column;
+.Joinus {
   background-color: #007bff;
   color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 5px 10px;
+  justify-content: center;
+  border: 10px;
   font-size: 14px;
   cursor: pointer;
+  top: 50px;
+  margin-left: 15px; /* Adds space to the left of the Sign Up button */
 }
 
 button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: #0056b3;
 }
 
 @media (max-width: 768px) {
   .clerkHeader {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .rightside_child {
-    justify-content: center;
-    margin-top: 10px;
   }
 }

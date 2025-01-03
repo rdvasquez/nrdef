@@ -1,19 +1,8 @@
 import React from "react";
-import localFont from "next/font/local"; // import google font
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
-
-// const GeistMonoVF = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
 
 export const metadata = {
   title: "Norwich Diocesan Evangelical Fellowship",
@@ -27,12 +16,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-      // className={`${geistMono.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
         <ClerkProvider>
           <Header />
           {children}
+          <Footer />
         </ClerkProvider>
       </body>
     </html>

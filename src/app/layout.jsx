@@ -1,7 +1,7 @@
 import React from "react";
-import localFont from "next/font/local"; // import google font
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata = {
@@ -16,12 +16,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-      // className={`${geistMono.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
         <ClerkProvider>
           <Header />
           {children}
+          <Footer />
         </ClerkProvider>
       </body>
     </html>

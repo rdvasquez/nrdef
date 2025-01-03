@@ -89,20 +89,36 @@ export default async function UserRegistrationForm() {
         <fieldset>
           <legend>Contact information</legend>
           <div className="userinfo">
-            <label htmlFor="addressline1">Address line No. 1:</label>
+            <label htmlFor="addressline1">House/Apartment No.</label>
             <input
               type="text"
               name="addressline1"
               id="addressline1"
-              placeholder="Address line 1"
+              placeholder="House/Apartment No."
               required
             />
-            <label htmlFor="addressline2">Address line No. 2:</label>
+            <label htmlFor="addressline2">Town/City</label>
             <input
               type="text"
               name="addressline2"
               id="addressline2"
-              placeholder="Address line 2"
+              placeholder="Town/City"
+              required
+            />
+            <label htmlFor="addressline3">County</label>
+            <input
+              type="text"
+              name="addressline3"
+              id="addressline3"
+              placeholder="County"
+              required
+            />
+            <label htmlFor="addressline4">Country</label>
+            <input
+              type="text"
+              name="addressline4"
+              id="addressline4"
+              placeholder="Country"
               required
             />
             <label htmlFor="postcode">Post Code:</label>
@@ -125,7 +141,7 @@ export default async function UserRegistrationForm() {
           </div>
         </fieldset>
         <div className="submit-button">
-          <button>Submit</button>
+          <button className="userdetails-button">Submit</button>
         </div>
       </form>
     </>

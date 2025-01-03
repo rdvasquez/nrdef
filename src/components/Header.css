@@ -8,7 +8,7 @@ body {
 .header {
   font-family: "Inter", sans-serif;
   position: relative;
-  z-index: -2; /* Brings header content above the overlay */
+  /* z-index: -2; Brings header content above the overlay */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -74,7 +74,7 @@ body {
   top: 50px;
 }
 
-.Joinus {
+.joinUs {
   background-color: #007bff;
   color: white;
   justify-content: center;

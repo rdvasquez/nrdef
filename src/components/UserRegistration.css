@@ -25,10 +25,17 @@ legend {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50px;
-  width: 150px;
-  background-color: #4caf50;
-  color: rgb(169, 26, 26);
+  margin: 1.2rem;
+}
+.userdetails-button {
+  height: 60px;
+  width: 250px;
+  padding: 10px 20px;
+  background-color: #cdc1ff;
+  color: rgba(56, 55, 54, 0.708);
   font-family: "Times New Roman", Times, serif;
-  border: none;
+  font-size: x-large;
+  font-weight: 800;
+  border: solid 3px #6555de;
+  border-radius: 5px;
 }

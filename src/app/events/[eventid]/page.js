@@ -18,37 +18,46 @@ export default async function SingleEventPage({ params }) {
 
     return (
       <div>
-        <h1>{decodeURIComponent(parts[1])}</h1>
+        <p className={styles.eventTitle}>{decodeURIComponent(parts[1])}</p>
+        <div className={styles.eventDisplayBox}>
+          <p>Venue</p>
+          <p>Date</p>
+          <p>Time</p>
+        </div>
         {eventDetails.map((eventDetail) => {
           console.log(eventDetail);
           const dateAndTime = eventDetail.time.toLocaleString();
           const formattedDate = eventDetail.time.toLocaleDateString("en-GB");
           const formattedTime = eventDetail.time.toLocaleTimeString();
           return (
-            <div key={eventDetail.id}>
-              <h4>Location:{eventDetail.venue}</h4>
-              {/* {dateAndTime} */}
-              <p>Date: {formattedDate}</p>
-              <p>Time: {formattedTime}</p>
+            <div className={styles.eventDisplayBox} key={eventDetail.id}>
+              <h4>{eventDetail.venue}</h4>
+              <h4>{formattedDate}</h4>
+              <h4>{formattedTime}</h4>
             </div>
           );
         })}
         <div>
           <form action={formSubmit}>
-            <fieldset>
-              <legend>Event Registration</legend>
+            <fieldset className={styles.formOutline}>
+              <legend className={styles.formTitle}>Event Registration</legend>
               <div className={styles.registrationForm}>
-                {/* <label htmlFor="title">
+                <label htmlFor="title">
                   <span>Title: </span>
                   <strong>
                     <span aria-label="required">*</span>
                   </strong>
                 </label>
-                <select name="title" id="title" required>
+                <select
+                  className={styles.selectBox}
+                  name="title"
+                  id="title"
+                  required
+                >
                   <option value="Mr.">Mr.</option>
                   <option value="Mrs.">Mrs.</option>
                   <option value="Ms.">Ms.</option>
-                </select> */}
+                </select>
                 <label htmlFor="firstname">
                   <span>First Name: </span>
                   <strong>
@@ -79,7 +88,7 @@ export default async function SingleEventPage({ params }) {
                   required
                 />
                 <SelectDateTime eventDetails={eventDetails} />
-                <label>Select diet</label>
+                <label>Select diet:</label>
                 <label>
                   <input type="radio" name="dietoption" value="Vegetarian" />{" "}
                   Vegetarian
@@ -104,7 +113,11 @@ export default async function SingleEventPage({ params }) {
                 value={decodeURIComponent(parts[1])}
                 hidden
               />
-              <button type="submit">Register</button>
+              <div className={styles.formButtonContainer}>
+                <button type="submit" className={styles.formSubmitbutton}>
+                  Register
+                </button>
+              </div>
             </div>
           </form>
         </div>
@@ -188,3 +201,4 @@ async function sendConfirmationEmail(
 }
 
 //await sendConfirmationEmail(email, eventName, formattedDateTime, venue);
+//

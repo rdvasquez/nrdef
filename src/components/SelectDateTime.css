@@ -1,0 +1,18 @@
+.eventInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+}
+.selectBox {
+  padding: 10px;
+  width: 100%;
+  border: 2px solid #5a5858;
+  border-radius: 5px;
+  font-size: medium;
+}
+
+.optionBox {
+  background-color: rgb(215, 209, 208);
+  padding: 0.3rem;
+}

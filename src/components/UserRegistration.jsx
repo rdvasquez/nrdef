@@ -71,7 +71,7 @@ export default async function UserRegistrationForm() {
       <form action={handleSubmit}>
         <fieldset>
           <legend>User details</legend>
-          <div>
+          <div className="userinfo">
             {/* <label htmlFor="title">
                   <span>Title: </span>
                   <strong>

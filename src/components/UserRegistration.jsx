@@ -38,7 +38,6 @@ export default async function UserRegistrationForm() {
     "use server";
 
     //Get data from the form
-
     const firstname = formData.get("firstname");
     const lastname = formData.get("lastname");
     const email = formData.get("email");
@@ -47,13 +46,43 @@ export default async function UserRegistrationForm() {
     const addressline2 = formData.get("addressline2");
     const postcode = formData.get("postcode");
     const phonenumber = formData.get("phonenumber");
+
+    //Insert data into the database table
+    const userdetailsRecord = await pool.query(
+      `INSERT INTO User_info(firstname, lastname, email, password, addressline1, addressline2, postcode,phonenumber) VALUES(?,?,?,?,?,?,?,?)`,
+      [
+        firstname,
+        lastname,
+        email,
+        password,
+        addressline1,
+        addressline2,
+        postcode,
+        phonenumber,
+      ]
+    );
+    console.log("userdetailsRecord-->" + userdetailsRecord);
+    revalidatePath("/users");
+    //redirect to the user details page
+    redirect("/users");
   }
   return (
     <>
       <form action={handleSubmit}>
         <fieldset>
           <legend>User details</legend>
-          <div className="userinfo">
+          <div>
+            {/* <label htmlFor="title">
+                  <span>Title: </span>
+                  <strong>
+                    <span aria-label="required">*</span>
+                  </strong>
+                </label>
+                <select name="title" id="title" required>
+                  <option value="Mr.">Mr.</option>
+                  <option value="Mrs.">Mrs.</option>
+                  <option value="Ms.">Ms.</option>
+                </select> */}
             <label htmlFor="firstname">
               <span>First Name: </span>
               <strong>
@@ -64,7 +93,7 @@ export default async function UserRegistrationForm() {
               type="text"
               name="firstname"
               id="firstname"
-              placeholder="First Name"
+              placeholder="Enter your first Name"
               required
             />
             <label htmlFor="lastname">Last Name:</label>
@@ -72,7 +101,7 @@ export default async function UserRegistrationForm() {
               type="text"
               name="lastname"
               id="lastname"
-              placeholder="Please enter your last name here"
+              placeholder="Enter your last name"
               required
             />
             <label htmlFor="email">Email:</label>
@@ -80,7 +109,7 @@ export default async function UserRegistrationForm() {
               type="email"
               name="email"
               id="email"
-              placeholder="Email"
+              placeholder="Enter your Email address"
               required
             />
           </div>
@@ -94,7 +123,7 @@ export default async function UserRegistrationForm() {
               type="text"
               name="addressline1"
               id="addressline1"
-              placeholder="House/Apartment No."
+              placeholder="Enter House/Apartment No."
               required
             />
             <label htmlFor="addressline2">Town/City</label>
@@ -102,7 +131,7 @@ export default async function UserRegistrationForm() {
               type="text"
               name="addressline2"
               id="addressline2"
-              placeholder="Town/City"
+              placeholder="Enter Town/City"
               required
             />
             <label htmlFor="addressline3">County</label>
@@ -110,7 +139,7 @@ export default async function UserRegistrationForm() {
               type="text"
               name="addressline3"
               id="addressline3"
-              placeholder="County"
+              placeholder="Enter County"
               required
             />
             <label htmlFor="addressline4">Country</label>
@@ -118,7 +147,7 @@ export default async function UserRegistrationForm() {
               type="text"
               name="addressline4"
               id="addressline4"
-              placeholder="Country"
+              placeholder="Enter Country"
               required
             />
             <label htmlFor="postcode">Post Code:</label>
@@ -127,7 +156,7 @@ export default async function UserRegistrationForm() {
               name="postcode"
               id="postcode"
               pattern="[A-Za-z]{1,2}[0-9Rr]{1,2} ?[0-9][A-Za-z]{2}"
-              placeholder="Post Code"
+              placeholder="Enter Post Code"
               required
             />
             <label htmlFor="phonenumber">Phone number:</label>
@@ -135,7 +164,7 @@ export default async function UserRegistrationForm() {
               type="tel"
               name="phonenumber"
               id="phonenumber"
-              placeholder="Phone number"
+              placeholder="Enter Phone number"
               required
             />
           </div>

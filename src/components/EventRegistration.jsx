@@ -1,34 +1,32 @@
-export default function EventRegistration() {
-  return (
-    <div>
-      <fieldset>
-        <legend>Details of event</legend>
-        <label>Event you would like to attend:</label>
-        <select>
-          <option>Event 1</option>
-          <option>Event 2</option>
-          <option>Event 3</option>
-          <option>Event 4</option>
-        </select>
-        <label>Please choose date and time:</label>
-        <select>
-          <option>Date and time1</option>
-          <option>Date and time2</option>
-          <option>Date and time3</option>
-          <option>Date and time4</option>
-        </select>
-        <label>Please specify your diet preferences</label>
-        <label>
-          <input type="radio" name="dietoption" /> Vegetarian
-        </label>
-        <label>
-          <input type="radio" name="dietoption" /> Non-vegetarian
-        </label>
-        <label>
-          <input type="radio" name="dietoption" /> Vegan
-        </label>
-      </fieldset>
-      <button type="submit">Register</button>
-    </div>
-  );
+import { pool } from "@/lib/db";
+import "./EventRegistration.css";
+import { currentUser } from "@clerk/nextjs/server";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+import Link from "next/link";
+
+export default async function EventRegistration() {
+  console.log("EventRegistration");
+  try {
+    const [events] = await pool.query(`SELECT * FROM Events`);
+    console.log(events);
+    return (
+      <div>
+        {events.map(function (event) {
+          console.log(event);
+
+          return (
+            <div key={event.id}>
+              <Link href={`/events/${event.id}-${event.title}`}>
+                {event.title}
+              </Link>
+              <p>{event.description}</p>
+            </div>
+          );
+        })}
+      </div>
+    );
+  } catch (error) {
+    console.error("Error fetching events:", error);
+  }
 }

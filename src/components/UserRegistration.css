@@ -1,4 +1,5 @@
 .userinfo {
+  background-color: #dbcbbd;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -15,7 +16,12 @@ input {
 }
 
 input:hover {
-  box-shadow: 3px px 5px #96c9f4;
+  box-shadow: 3px px 5px #f4e096;
+}
+
+fieldset {
+  border: none;
+  margin-top: 5%;
 }
 
 legend {
@@ -40,4 +46,5 @@ legend {
   font-weight: 800;
   border: solid 3px #6555de;
   border-radius: 5px;
+  box-shadow: 3px px 5px #96c9f4;
 }

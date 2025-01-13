@@ -169,12 +169,12 @@ async function sendConfirmationEmail(
 ) {
   //Configure the nodemailer transport
   const transporter = nodemailer.createTransport({
-    host: "smtpout.secureserver.net",
-    port: 587,
-    secure: false,
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    secure: process.env.SMTP_SECURE === "false",
     auth: {
-      user: "info@norwichdef.org",
-      pass: "ChristTheSaviour@2512",
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
     },
   });
   // Set up the email options

@@ -2,6 +2,7 @@ import { pool } from "@/lib/db";
 import styles from "./singleeventpage.module.css";
 import SelectDateTime from "@/components/SelectDateTime.jsx";
 import { revalidatePath } from "next/cache";
+import nodemailer from "nodemailer";
 
 export default async function SingleEventPage({ params }) {
   console.log("eventid-->" + params.eventid);
@@ -56,7 +57,8 @@ export default async function SingleEventPage({ params }) {
                 >
                   <option value="Mr.">Mr.</option>
                   <option value="Mrs.">Mrs.</option>
-                  <option value="Ms.">Ms.</option>
+                  <option value="Ms.">Miss</option>
+                  <option value="Miss.">Ms.</option>
                 </select>
                 <label htmlFor="firstname">
                   <span>First Name: </span>
@@ -165,16 +167,19 @@ async function sendConfirmationEmail(
   formattedDateTime,
   venue
 ) {
-  let transporter = nodemailer.createTransport({
-    service: "gmail",
+  //Configure the nodemailer transport
+  const transporter = nodemailer.createTransport({
+    host: "smtpout.secureserver.net",
+    port: 587,
+    secure: false,
     auth: {
-      user: "norwichdef@gmail.com",
-      pass: "t.72f@74C2FtQSF",
+      user: "info@norwichdef.org",
+      pass: "ChristTheSaviour@2512",
     },
   });
-
+  // Set up the email options
   let mailOptions = {
-    from: "norwichdef@gmail.com",
+    from: "info@norwichdef.org",
     to: email,
     subject: "Event Registration Confirmation",
     html: `

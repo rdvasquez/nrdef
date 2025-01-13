@@ -16,6 +16,8 @@
   text-align: start;
 }
 .selectBox {
+  background-color: #e5d9f2;
+  font-family: "Times New Roman", Times, serif;
   padding: 10px;
   width: 100%;
   border: 2px solid #5a5858;
@@ -62,11 +64,15 @@
   width: 200px;
   padding: 10px 20px;
   background-color: #cdc1ff;
-  color: rgba(170, 12, 12, 0.708);
+  color: rgba(0, 0, 10, 0.708);
   font-family: "Times New Roman", Times, serif;
   font-size: x-large;
   font-weight: 800;
-  border: solid 3px #6555de;
+  border: solid 3px#6555de;
   border-radius: 5px;
-  box-shadow: 3px 2px 5px #96c9f4;
+}
+.formSubmitbutton:hover {
+  background-color: #a5a5a9;
+  color: #ffffff;
+  box-shadow: 3px 3px 5px rgb(197, 194, 194);
 }

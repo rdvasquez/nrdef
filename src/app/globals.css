@@ -14,12 +14,14 @@ input {
 }
 
 input[type="radio"] {
-  transform: scale(1.5); /* Adjust this value as needed */
+  transform: scale(1.8); /* Adjust this value as needed */
 }
 
 input:hover {
-  box-shadow: 3px px 5px #f4e096;
+  box-shadow: 3px 3px 5px rgb(197, 194, 194);
 }
+/* box-shadow: 3px 3px 5px #f4e096;
+} */
 
 /* @media (prefers-color-scheme: dark) {
   :root {

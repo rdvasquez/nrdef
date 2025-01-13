@@ -1,64 +1,71 @@
 import { pool } from "@/lib/db";
-//import { connection } from "@/lib/db";
 import "./UserRegistration.css";
 import { currentUser } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { SignIn } from "@clerk/nextjs";
 
 export default async function UserRegistrationForm() {
   const currUser = await currentUser();
-  console.log("currUser-->" + currUser);
+  console.log("currUser-->" + currUser.id);
+  if (currUser == null) {
+    return <SignIn />;
+    // return <SignIn />;
+  }
+  console.log("123-->");
+  //const promisePool = pool.promise();
 
-  let usersId = "";
-  await pool.query(
-    `SELECT * FROM Users WHERE clerk_id=?`,
-    [currUser.id],
-    function (err, results) {
-      if (err) return callback(err);
-      if (results.length == 0) {
-        const userRecord = pool.query(
-          `INSERT INTO Users(clerk_id, username) VALUES(?,?)`,
-          [currUser.id, ""]
-        );
-      } else {
-        usersId = results[0].id;
-        console.log("usersId-->" + usersId);
-      }
+  let userId = 0;
+  try {
+    const [rows] = await pool.query(`SELECT id FROM Users WHERE clerk_id=?`, [
+      currUser.id,
+    ]);
+    {
+      rows.map((row) => {
+        userId = row.id;
+        console.log("userId-->" + userId);
+      });
     }
-  );
-  //console.log("rows ->>" + rows.length);
-  //const userId = rows[0].id;
-
-  // const userRecord = await pool.query(
-  //   `INSERT INTO Users(clerk_id,username) VALUES(?,?)`,
-  //   [currUser.id, ""]
-  // );
+    if (rows.length === 0) {
+      const [userRecord] = await pool.query(
+        `INSERT INTO Users(clerk_id, username) VALUES(?,?)`,
+        [currUser.id, ""]
+      );
+      userId = userRecord.insertId;
+    }
+  } catch (err) {}
 
   async function handleSubmit(formData) {
     "use server";
 
     //Get data from the form
-    const firstname = formData.get("firstname");
-    const lastname = formData.get("lastname");
+    const title = formData.get("title");
+    const firstName = formData.get("firstname");
+    const lastName = formData.get("lastname");
     const email = formData.get("email");
-    const password = formData.get("password");
+    const phoneNumber = formData.get("phonenumber");
+    console.log("phoneNumber-->" + phoneNumber);
+    // const password = formData.get("password");
     const addressline1 = formData.get("addressline1");
     const addressline2 = formData.get("addressline2");
-    const postcode = formData.get("postcode");
-    const phonenumber = formData.get("phonenumber");
+    const postCode = formData.get("postcode");
+    const creationDate = new Date();
+    const userId = formData.get("userId");
 
     //Insert data into the database table
     const userdetailsRecord = await pool.query(
-      `INSERT INTO User_info(firstname, lastname, email, password, addressline1, addressline2, postcode,phonenumber) VALUES(?,?,?,?,?,?,?,?)`,
+      `INSERT INTO User_info(user_id,title, first_name, last_name, email, phone_number, address_line_1, address_line_2, postcode, creation_date) VALUES(?,?,?,?,?,?,?,?,?,?)`,
       [
-        firstname,
-        lastname,
+        userId,
+        title,
+        firstName,
+        lastName,
         email,
-        password,
+        phoneNumber,
         addressline1,
         addressline2,
-        postcode,
-        phonenumber,
+        postCode,
+        creationDate,
       ]
     );
     console.log("userdetailsRecord-->" + userdetailsRecord);
@@ -72,17 +79,17 @@ export default async function UserRegistrationForm() {
         <fieldset>
           <legend>User details</legend>
           <div className="userinfo">
-            {/* <label htmlFor="title">
-                  <span>Title: </span>
-                  <strong>
-                    <span aria-label="required">*</span>
-                  </strong>
-                </label>
-                <select name="title" id="title" required>
-                  <option value="Mr.">Mr.</option>
-                  <option value="Mrs.">Mrs.</option>
-                  <option value="Ms.">Ms.</option>
-                </select> */}
+            <label htmlFor="title">
+              <span>Title: </span>
+              <strong>
+                <span aria-label="required">*</span>
+              </strong>
+            </label>
+            <select name="title" id="title" required>
+              <option value="Mr.">Mr.</option>
+              <option value="Mrs.">Mrs.</option>
+              <option value="Ms.">Ms.</option>
+            </select>
             <label htmlFor="firstname">
               <span>First Name: </span>
               <strong>
@@ -134,22 +141,22 @@ export default async function UserRegistrationForm() {
               placeholder="Enter Town/City"
               required
             />
-            <label htmlFor="addressline3">County</label>
+            {/* <label htmlFor="addressline3">County</label>
             <input
               type="text"
               name="addressline3"
               id="addressline3"
               placeholder="Enter County"
               required
-            />
-            <label htmlFor="addressline4">Country</label>
+            /> */}
+            {/* <label htmlFor="addressline4">Country</label>
             <input
               type="text"
               name="addressline4"
               id="addressline4"
               placeholder="Enter Country"
               required
-            />
+            /> */}
             <label htmlFor="postcode">Post Code:</label>
             <input
               type="text"
@@ -167,6 +174,7 @@ export default async function UserRegistrationForm() {
               placeholder="Enter Phone number"
               required
             />
+            <input type="text" name="userId" value={userId} hidden />
           </div>
         </fieldset>
         <div className="submit-button">

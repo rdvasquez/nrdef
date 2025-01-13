@@ -16,7 +16,7 @@ input {
 }
 
 input:hover {
-  box-shadow: 3px px 5px #f4e096;
+  box-shadow: 3px 3px 5px #a2a2a4;
 }
 
 fieldset {
@@ -46,5 +46,10 @@ legend {
   font-weight: 800;
   border: solid 3px #6555de;
   border-radius: 5px;
-  box-shadow: 3px px 5px #96c9f4;
+}
+
+.userdetails-button:hover {
+  background-color: #a5a5a9;
+  color: #ffffff;
+  box-shadow: 3px 2px 5px #a2a2a4;
 }

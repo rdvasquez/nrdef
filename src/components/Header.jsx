@@ -67,14 +67,13 @@ export default async function Header() {
           </SignedIn>
           <SignedIn>
             <SignOutButton />
+            <button className="joinUs">
+              <Link href="/users">Join us</Link>
+            </button>
           </SignedIn>
           <SignedOut>
             <SignInButton />
           </SignedOut>
-
-          <button className="joinUs">
-            <Link href="/users">Join us</Link>
-          </button>
         </div>
       </nav>
     </header>

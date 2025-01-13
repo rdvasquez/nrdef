@@ -1,0 +1,78 @@
+.eventTitle {
+  color: #164cc1;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 1.2rem;
+}
+
+.eventDisplayBox {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 5px;
+  text-align: start;
+}
+.selectBox {
+  background-color: #e5d9f2;
+  font-family: "Times New Roman", Times, serif;
+  padding: 10px;
+  width: 100%;
+  border: 2px solid #5a5858;
+  border-radius: 5px;
+  font-size: medium;
+}
+
+.optionBox {
+  background-color: rgb(215, 209, 208);
+  padding: 0.3rem;
+}
+
+.registrationForm {
+  /* background-color: #dbcbbd; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.formOutline {
+  border: none;
+  margin-top: 5%;
+}
+
+.formTitle {
+  margin: 0 auto;
+  color: #164cc1;
+  font-weight: bold;
+}
+
+.formButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.2rem;
+}
+
+.formSubmitbutton {
+  height: 60px;
+  width: 200px;
+  padding: 10px 20px;
+  background-color: #cdc1ff;
+  color: rgba(0, 0, 10, 0.708);
+  font-family: "Times New Roman", Times, serif;
+  font-size: x-large;
+  font-weight: 800;
+  border: solid 3px#6555de;
+  border-radius: 5px;
+}
+.formSubmitbutton:hover {
+  background-color: #a5a5a9;
+  color: #ffffff;
+  box-shadow: 3px 3px 5px rgb(197, 194, 194);
+}

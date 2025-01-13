@@ -4,7 +4,24 @@ body {
   font-family: "Inter";
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: #ead8b1;
 }
+
+input {
+  padding: 0.8rem 0.3rem;
+  border-radius: 5px;
+  background-color: #e5d9f2;
+}
+
+input[type="radio"] {
+  transform: scale(1.8); /* Adjust this value as needed */
+}
+
+input:hover {
+  box-shadow: 3px 3px 5px rgb(197, 194, 194);
+}
+/* box-shadow: 3px 3px 5px #f4e096;
+} */
 
 /* @media (prefers-color-scheme: dark) {
   :root {
@@ -22,4 +39,4 @@ a {
   html {
     color-scheme: dark;
   }
-} */
+}*/

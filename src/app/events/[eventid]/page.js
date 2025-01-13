@@ -179,7 +179,7 @@ async function sendConfirmationEmail(
   });
   // Set up the email options
   let mailOptions = {
-    from: "info@norwichdef.org",
+    from: process.env.SMTP_USER,
     to: email,
     subject: "Event Registration Confirmation",
     html: `

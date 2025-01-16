@@ -14,8 +14,11 @@ input {
 }
 
 input[type="radio"] {
-  transform: scale(1.8); /* Adjust this value as needed */
+  transform: scale(2.5); /* Adjust this value as needed */
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 }
+/* input::not([type="radio"]):hover */
 
 input:hover {
   box-shadow: 3px 3px 5px rgb(197, 194, 194);

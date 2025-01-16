@@ -10,7 +10,6 @@ export default async function UserRegistrationForm() {
   console.log("currUser-->" + currUser.id);
   if (currUser == null) {
     return <SignIn />;
-    // return <SignIn />;
   }
   console.log("123-->");
   //const promisePool = pool.promise();

@@ -10,6 +10,7 @@ import {
   SignOutButton,
 } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
+import IsAdmin from "./IsAdmin";
 
 export default async function Header() {
   const user = await currentUser();
@@ -57,6 +58,11 @@ export default async function Header() {
         <Link href="/about">About</Link>
         <Link href="/resources">Resources</Link>
         <Link href="/events">Events</Link>
+        <div className="signIn">
+          <SignedIn>
+            <IsAdmin></IsAdmin>
+          </SignedIn>
+        </div>
         <Link href="/contact">Contact</Link>
         <div className="signIn">
           <SignedIn>

@@ -3,6 +3,9 @@ import styles from "./singleeventpage.module.css";
 import SelectDateTime from "@/components/SelectDateTime.jsx";
 import { revalidatePath } from "next/cache";
 import nodemailer from "nodemailer";
+// import dotenv from "dotenv";
+// dotenv.config();
+// console.log(process.env.SMTP_HOST)
 
 export default async function SingleEventPage({ params }) {
   console.log("eventid-->" + params.eventid);
@@ -178,6 +181,7 @@ async function sendConfirmationEmail(
     },
   });
   // Set up the email options
+
   let mailOptions = {
     from: process.env.SMTP_USER,
     to: email,

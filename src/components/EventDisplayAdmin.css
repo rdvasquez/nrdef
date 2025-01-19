@@ -1,0 +1,38 @@
+.eventDisplayBox,
+.eventDisplayHeadingBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 0.5rem;
+  padding: 0.5rem;
+  padding-top: 0.8rem;
+  text-align: center;
+  max-width: 75%;
+}
+.eventDisplayHeadingBox {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+.eventDisplayBox:nth-child(even) {
+  background-color: #a8a2a2;
+}
+.eventDisplayBox:nth-child(odd) {
+  background-color: #d3d3d3;
+}
+
+.eventDisplayBox > button {
+  background-color: #c8afbe;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  margin-left: 5px;
+
+  border: 1px solid rgb(43, 41, 41);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  max-width: 60%;
+}
+button:hover {
+  background-color: rgb(62, 86, 165);
+  color: white;
+  opacity: 0.8;
+}

@@ -1,19 +1,22 @@
 // import mysqlPromise from "mysql2/promise.js";
 
 import mysql2 from "mysql2/promise";
+import dotenv from "dotenv";
 
 // const mysql2 = require("mysql2/promise");
 // Create a connection pool
+
+dotenv.config();
 const pool = mysql2.createPool({
   connectionLimit: 10,
   port: 3306,
-  host: "92.205.172.123",
-  user: "dbuser_test",
-  password: "R]3m=.5t}($B",
-  database: "ndef_test",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
 });
+
 exports.pool = pool;
-//exports.connection = connection;
 
 // Perform a query using arrow functions
 // pool.query("SELECT 1 + 1 AS solution", (error, results, fields) => {

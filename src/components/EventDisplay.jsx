@@ -1,26 +1,29 @@
 import { pool } from "@/lib/db";
-import "./EventRegistration.css";
+import "./EventDisplay.css";
 import { currentUser } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 
-export default async function EventRegistration() {
-  console.log("EventRegistration");
+export default async function EventDisplay() {
+  console.log("EventInfo");
   try {
     const [events] = await pool.query(`SELECT * FROM Events`);
     console.log(events);
     return (
       <div>
+        <div className="eventDisplayHeadingBox">
+          <h3>Event</h3>
+          <h3>Description</h3>
+        </div>
         {events.map(function (event) {
           console.log(event);
-
           return (
-            <div key={event.id}>
+            <div className="eventDisplayBox" key={event.id}>
               <Link href={`/events/${event.id}-${event.title}`}>
                 {event.title}
               </Link>
-              <p>{event.description}</p>
+              <span>{event.description}</span>
             </div>
           );
         })}

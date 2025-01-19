@@ -2,6 +2,7 @@ import { pool } from "@/lib/db";
 import styles from "./singleeventpage.module.css";
 import SelectDateTime from "@/components/SelectDateTime.jsx";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 import nodemailer from "nodemailer";
 // import dotenv from "dotenv";
 // dotenv.config();
@@ -136,7 +137,7 @@ async function formSubmit(formData) {
   "use server";
   console.log("formSubmit");
   console.log(formData);
-
+  const title = formData.get("title");
   const firstName = formData.get("firstname");
   const lastName = formData.get("lastname");
   const email = formData.get("email");
@@ -148,8 +149,9 @@ async function formSubmit(formData) {
   const dietOption = formData.get("dietoption");
 
   const registeredUserRecord = await pool.query(
-    `INSERT INTO Event_registration(firstname, lastname, email, event, datetime, venue, diet) VALUES(?,?,?,?,?,?,?)`,
+    `INSERT INTO Event_registration(title, firstname, lastname, email, event, datetime, venue, diet) VALUES(?,?,?,?,?,?,?,?)`,
     [
+      title,
       firstName,
       lastName,
       email,
@@ -159,12 +161,26 @@ async function formSubmit(formData) {
       dietOption,
     ]
   );
-  await sendConfirmationEmail(email, eventName, formattedDateTime, venue);
+  await sendConfirmationEmail(
+    title,
+    firstName,
+    lastName,
+    email,
+    eventName,
+    formattedDateTime,
+    venue
+  );
+  revalidatePath("/events");
+  redirect("/");
 }
 //If the user is logged in, the event registration form to be populated with the user's details from the properties of CurrentUser() from Clerk. Otherwise, the user can register as a guest.
 
 // Code to send an email to the user after successful registration
+
 async function sendConfirmationEmail(
+  title,
+  firstName,
+  lastName,
   email,
   eventName,
   formattedDateTime,
@@ -174,7 +190,7 @@ async function sendConfirmationEmail(
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
-    secure: process.env.SMTP_SECURE === "false",
+    secure: process.env.SMTP_SECURE === "true",
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,
@@ -188,7 +204,7 @@ async function sendConfirmationEmail(
     subject: "Event Registration Confirmation",
     html: `
       <h1>Registration Successful</h1>
-      <p>Dear ${email},</p>
+      <p>Dear ${title} ${firstName} ${lastName}</p>
       <p>Thank you for registering for the event: <strong>${eventName}</strong>.</p>
       <p>Here are the details of the event:</p>
       <ul>
@@ -208,6 +224,3 @@ async function sendConfirmationEmail(
     console.error("Error sending confirmation email:", error);
   }
 }
-
-//await sendConfirmationEmail(email, eventName, formattedDateTime, venue);
-//

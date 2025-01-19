@@ -1,14 +1,23 @@
-.event-registration {
-  color: tomato;
-  display: flex;
-  flex-direction: column;
+.eventDisplayBox,
+.eventDisplayHeadingBox {
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0.5rem;
+  padding: 0.5rem;
+  padding-top: 0.8rem;
+  text-align: center;
+  max-width: 50%;
 }
-fieldset {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  margin: 0 auto;
+.eventDisplayHeadingBox {
+  background-color: #f0f0f0;
+  font-weight: bold;
 }
-legend {
-  margin-bottom: 2rem;
+.eventDisplayBox:nth-child(even) {
+  background-color: #a8a2a2;
+}
+.eventDisplayBox:nth-child(odd) {
+  background-color: #d3d3d3;
 }

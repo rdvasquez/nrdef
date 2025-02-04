@@ -3,12 +3,12 @@ export default function About() {
     <div className="About">
       <div>
         <h1 className="DEF">Who is Diocesan Evangelical Fellowship?</h1>
-        <span className="description">
+        <p className="description">
           The Diocesan Evangelical Fellowship is a network representing
           approximately 20 Anglican Evangelical churches across Norwich,
           Norfolk, and the Waveney Valley. Our membership currently consists of
-          71 individuals.
-        </span>
+          71 individuals
+        </p>
         <h2>Our purpose as an organisation is:</h2>
         <ul>
           <li>To unite evangelical ministers and congregation members</li>

@@ -36,23 +36,13 @@ export default async function Header() {
           height={200}
           alt="logo"
         />
-        <span>
+        <span className="verse">
+          {" "}
           “How beautiful are the feet of those who bring good news” <br />
           Romans 10:15
         </span>
       </div>
 
-      {/* <nav className="nav">
-<Image
-          width={250}
-          height={250}
-          objectFit="cover"
-          alt="logo"
-        />
-        <span className="verse">
-          “How beautiful are the feet of those who bring good news” Romans 10:15
-        </span>
-      </div> */}
       <nav className="navbar">
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>

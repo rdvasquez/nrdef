@@ -1,24 +1,49 @@
-heroSection {
-  position: relative;
-  display: flex;
-  flex-direction: column; /* Changed to column for vertical alignment */
-  justify-content: center;
-  align-items: center;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+.grid-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  gap: 10px;
+}
+
+.left .title {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  font-size: 16px;
+  line-height: 26px;
+  padding-bottom: 20px;
   text-align: center;
-  z-index: 10; /* Keep the hero section on top */
-  margin-bottom: 50%; /* Provide enough space to separate from the footer */
-  padding: 30rem; /* Adjust padding for the desired space around content */
-  width: 100%; /* Ensure the hero section takes the full width of the viewport */
-  font-size: 24px;
 }
 
-.heroImage {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 50rem; /* Provide margin at the bottom to create space between elements */
-  border-radius: 5rem;
+.left .content {
+  grid-column: 2 / 4;
+  grid-row: 1 / 3;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: justify;
 }
 
-h1 {
-  margin-bottom: 10rem; /* Add margin below the heading */
+.right .content2 {
+  grid-column: 1;
+  grid-row: 2 / 5;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: justify;
+}
+
+.hero-image {
+  grid-column: 2 / 4;
+  grid-row: 1;
+  padding: 50px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .right {
+    padding-left: 20px;
+    grid-template-columns: 1fr;
+  }
 }

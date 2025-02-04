@@ -3,39 +3,21 @@
 footer {
   font-family: "Inter", sans-serif;
   position: relative;
-  /* z-index: -2; Brings header content above the overlay */
+  z-index: -2;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  color: white;
-  padding: 20px;
-}
-
-.leftside-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  margin-top: 7%;
 }
 
 .footerverse {
   font-family: serif;
   font-style: italic;
+  font-size: 16px;
+  color: white;
   width: 100%;
   margin-top: 7%;
-}
-
-.rightside-footer {
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  width: 100%;
-  margin-top: 20%;
-  color: black;
-  font: 5px;
 }
 
 .footerImage {
@@ -47,4 +29,46 @@ footer {
   z-index: -2;
   overflow: hidden;
   object-fit: cover;
+}
+
+/* .rightside-footer {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: auto;
+  grid-gap: 5px;
+}
+
+.copyright {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.privacy {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+/* .footer-links {
+  display: flex;
+  justify-content: center; /* Center the links horizontally */
+/* gap: 20px; */
+
+.rightside-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.policy {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+footer a {
+  color: #000; /* Default link color */
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline; /* Underline on hover */
 }

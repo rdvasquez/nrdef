@@ -2,25 +2,32 @@ import Image from "next/image";
 
 export default function heroSection() {
   return (
-    <div className="heroSection">
-      <div>
-        <h1>Welcome to Norwich Diocesan Evangelical Fellowship</h1>
+    <div className="grid-container">
+      <div className="left">
+        <h1>Welcome to Norwich Diocesan Evangelical Fellowship!</h1>
         <p>
-          We are a network of Anglican Evangelical churches in Norfolk, England{" "}
-          <br />
-          united by faith, love, and a commitment to share the good news and{" "}
-          <br />
+          We are a network of Anglican Evangelical churches in Norfolk, England
+          united by faith, love, and a commitment to share the good news and
           serving our communities.
         </p>
-
-        <Image
-          className="heroImage"
-          src="/faith.png"
-          width={500}
-          height={250}
-          objectFit="cover"
-          alt="statement of faith"
-        />
+        <div className="right">
+          <div className="content2"></div>
+          <h2>The Great Commission Through Faith and Fellowship.</h2>
+          <p>
+            We are united in the teachings of our Lord Jesus Christ and hold
+            fast to the authority of the Holy Bible. Our fellowship is steadfast
+            in faith, actively reaching out to our communities to serve with
+            love and compassion, living out the call to be salt and light in the
+            world.
+          </p>
+          <Image
+            className="hero-image"
+            src="/fellowship.png"
+            width={460}
+            height={280}
+            alt="The Great Commission Through Faith and Fellowship."
+          />
+        </div>
       </div>
     </div>
   );

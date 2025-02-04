@@ -18,28 +18,14 @@ input[type="radio"] {
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
-/* input::not([type="radio"]):hover */
 
 input:hover {
   box-shadow: 3px 3px 5px rgb(197, 194, 194);
 }
-/* box-shadow: 3px 3px 5px #f4e096;
-} */
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.About {
+  font-size: 18px;
+  font-style: inter;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 }
- 
-a {
-  color: inherit;
-  text-decoration: none;
-} 
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}*/

@@ -9,9 +9,10 @@ import nodemailer from "nodemailer";
 // console.log(process.env.SMTP_HOST)
 
 export default async function SingleEventPage({ params }) {
+  const { eventid } = await params;
   console.log("eventid-->" + params.eventid);
 
-  const parts = params.eventid.split("-");
+  const parts = await params.eventid.split("-");
   console.log("parts-->" + parts);
   try {
     const [eventDetails] = await pool.query(
@@ -104,7 +105,7 @@ export default async function SingleEventPage({ params }) {
                     type="radio"
                     name="dietoption"
                     value="Non-vegetarian"
-                  />{" "}
+                  />
                   Non-vegetarian
                 </label>
                 <label>
@@ -135,7 +136,6 @@ export default async function SingleEventPage({ params }) {
 }
 async function formSubmit(formData) {
   "use server";
-  console.log("formSubmit");
   console.log(formData);
   const title = formData.get("title");
   const firstName = formData.get("firstname");
@@ -187,6 +187,7 @@ async function sendConfirmationEmail(
   venue
 ) {
   //Configure the nodemailer transport
+
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
@@ -196,6 +197,7 @@ async function sendConfirmationEmail(
       pass: process.env.SMTP_PASS,
     },
   });
+
   // Set up the email options
 
   let mailOptions = {
@@ -204,7 +206,7 @@ async function sendConfirmationEmail(
     subject: "Event Registration Confirmation",
     html: `
       <h1>Registration Successful</h1>
-      <p>Dear ${title} ${firstName} ${lastName}</p>
+      <p>Dear ${title} ${firstName} ${lastName},</p>
       <p>Thank you for registering for the event: <strong>${eventName}</strong>.</p>
       <p>Here are the details of the event:</p>
       <ul>

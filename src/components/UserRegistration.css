@@ -9,23 +9,27 @@
   padding: 1rem;
 }
 
-input {
+input,
+select {
   padding: 0.8rem 0.3rem;
+  border: solid 3px #6555de;
   border-radius: 5px;
   background-color: #e5d9f2;
 }
 
-input:hover {
+input:hover,
+select:hover {
   box-shadow: 3px 3px 5px #a2a2a4;
 }
 
 fieldset {
   border: none;
-  margin-top: 5%;
+  padding-top: 5%;
 }
 
-legend {
+.caption {
   margin: 0 auto;
+  margin-top: 1rem;
 }
 
 .submit-button {

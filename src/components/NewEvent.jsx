@@ -2,63 +2,57 @@ import { pool } from "@/lib/db";
 import "./NewEvent.css";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import AdditionalTimings from "./AdditionalTiming";
 
-export default async function NewEvent() {
-  async function AddEvent(formData) {
-    "use server";
-    let eventId;
-    const title = formData.get("title");
-    const description = formData.get("description");
-    const date = formData.get("date");
-    const time = formData.get("time");
-    const venue = formData.get("venue");
-    const datetime = new Date(`${date}T${time}`)
+async function AddEvent(formData) {
+  "use server";
+  let eventId;
+  const title = formData.get("title");
+  const description = formData.get("description");
+
+  const [newEvents] = await pool.query(
+    `INSERT INTO Events(title, description) VALUES(?,?)`,
+    [title, description]
+  );
+  console.log(newEvents);
+
+  eventId = newEvents.insertId;
+  console.log("eventId ->>" + eventId);
+  const dummy = formData.getAll("dummy");
+  console.log(dummy);
+  dummy.forEach(async (_, index) => {
+    let datetime = new Date(
+      `${formData.get(`date${index}`)}T${formData.get(`time${index}`)}`
+    )
       .toISOString()
       .slice(0, 19)
       .replace("T", " ");
-
-    const [newEvents] = await pool.query(
-      `INSERT INTO Events(title, description) VALUES(?,?)`,
-      [title, description]
-    );
-    console.log(newEvents);
-
-    eventId = newEvents.insertId;
-    console.log("eventId ->>" + eventId);
-    // {
-    //   newEvents.map((newEvent) => {
-    //     console.log("newEvent.id ->>" + newEvent.id);
-    //   });
-    // }
-    const [newEventInfo] = await pool.query(
+    console.log("datetime-->" + datetime);
+    await pool.query(
       `INSERT INTO Event_timings(event_id, time, venue) VALUES(?,?,?)`,
-      [eventId, datetime, venue]
+      [eventId, datetime, formData.get(`venue${index}`)]
     );
-    console.log(newEventInfo);
-    revalidatePath("/admin");
-    redirect("/admin");
-  }
-  //Event_timings.event_id = rows.insertId;
+  });
+
+  revalidatePath("/admin");
+  redirect("/admin");
+}
+export default function NewEvent() {
   return (
     <div>
-      <div>
+      <form action={AddEvent}>
         <fieldset>
           <legend>New Event</legend>
-          <form action={AddEvent} className="newEventForm">
+          <div className="newEventForm">
             <label htmlFor="title">Title:</label>
             <input type="text" id="title" name="title" required />
             <label htmlFor="description">Description:</label>
             <input type="text" id="description" name="description" required />
-            <label htmlFor="date">Date:</label>
-            <input type="date" id="date" name="date" required />
-            <label htmlFor="time">Time:</label>
-            <input type="time" id="time" name="time" required />
-            <label htmlFor="venue">Venue:</label>
-            <input type="text" id="venue" name="venue" required />
-            <button type="submit">Add Event</button>
-          </form>
+          </div>
+          <AdditionalTimings />
         </fieldset>
-      </div>
+        <button type="submit">Submit Event</button>
+      </form>
     </div>
   );
 }

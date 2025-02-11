@@ -19,7 +19,7 @@ export default async function EventDisplayAdmin() {
           <h3>Action</h3>
           <h3>Action</h3>
         </div>
-        {events.map(function (event) {
+        {events.map((event) => {
           console.log(event);
           return (
             <div className="eventDisplayBox" key={event.id}>
@@ -27,10 +27,13 @@ export default async function EventDisplayAdmin() {
                 {event.title}
               </Link>
               <span>{event.description}</span>
-              <button>Edit</button>
+              <form action={EditEvent}>
+                <button>Edit</button>
+                <input type="hidden" name="editEventId" value={event.id} />
+              </form>
+
               <form action={DeleteEvent}>
                 <input type="hidden" name="eventId" value={event.id} />
-
                 <button>Delete</button>
               </form>
             </div>
@@ -50,4 +53,11 @@ async function DeleteEvent(formData) {
   await pool.query(`DELETE FROM Events WHERE id = ?`, [eventId]);
   revalidatePath("/admin");
   redirect("/admin");
+}
+async function EditEvent(formData) {
+  "use server";
+  const editEventId = formData.get("editEventId");
+  console.log("editEventId --->>>>>>>>>>>>>" + editEventId);
+  revalidatePath(`/admin/${editEventId}`);
+  redirect(`/admin/${editEventId}`);
 }

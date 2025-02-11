@@ -76,7 +76,7 @@ export default async function UserRegistrationForm() {
     <>
       <form action={handleSubmit}>
         <fieldset>
-          <legend>User details</legend>
+          <legend class="caption">User details</legend>
           <div className="userinfo">
             <label htmlFor="title">
               <span>Title: </span>
@@ -90,7 +90,7 @@ export default async function UserRegistrationForm() {
               <option value="Ms.">Ms.</option>
             </select>
             <label htmlFor="firstname">
-              <span>First Name: </span>
+              <span>First Name </span>
               <strong>
                 <span aria-label="required">*</span>
               </strong>
@@ -102,7 +102,7 @@ export default async function UserRegistrationForm() {
               placeholder="Enter your first Name"
               required
             />
-            <label htmlFor="lastname">Last Name:</label>
+            <label htmlFor="lastname">Last Name</label>
             <input
               type="text"
               name="lastname"
@@ -110,7 +110,7 @@ export default async function UserRegistrationForm() {
               placeholder="Enter your last name"
               required
             />
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               name="email"
@@ -122,7 +122,7 @@ export default async function UserRegistrationForm() {
         </fieldset>
 
         <fieldset>
-          <legend>Contact information</legend>
+          <legend class="caption">Contact information</legend>
           <div className="userinfo">
             <label htmlFor="addressline1">House/Apartment No.</label>
             <input
@@ -156,7 +156,7 @@ export default async function UserRegistrationForm() {
               placeholder="Enter Country"
               required
             /> */}
-            <label htmlFor="postcode">Post Code:</label>
+            <label htmlFor="postcode">Post Code</label>
             <input
               type="text"
               name="postcode"
@@ -165,7 +165,7 @@ export default async function UserRegistrationForm() {
               placeholder="Enter Post Code"
               required
             />
-            <label htmlFor="phonenumber">Phone number:</label>
+            <label htmlFor="phonenumber">Phone number</label>
             <input
               type="tel"
               name="phonenumber"
@@ -173,7 +173,7 @@ export default async function UserRegistrationForm() {
               placeholder="Enter Phone number"
               required
             />
-            <input type="text" name="userId" value={userId} hidden />
+            <input type="text" name="userId" value={userId} hidden readOnly />
           </div>
         </fieldset>
         <div className="submit-button">

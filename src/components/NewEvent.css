@@ -4,4 +4,11 @@
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+  row-gap: 0.5rem;
+}
+.DetailsBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
 }

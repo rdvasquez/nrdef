@@ -22,14 +22,14 @@ export default function heroSection() {
           faith, actively reaching out to our communities to serve with love and
           compassion, living out the call to be salt and light in the world.
         </span>
-        <Image
-          className="hero-image"
-          src="/fellowship.png"
-          width={460}
-          height={280}
-          alt="The Great Commission Through Faith and Fellowship."
-        />
       </div>
+      <Image
+        className="hero-image"
+        src="/fellowship.png"
+        width={460}
+        height={280}
+        alt="The Great Commission Through Faith and Fellowship."
+      />
     </div>
   );
 }

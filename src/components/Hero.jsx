@@ -6,7 +6,7 @@ export default function heroSection() {
     <div className="container">
       <div className="left">
         <h1>Welcome to Norwich Diocesan Evangelical Fellowship!</h1>
-        <p>
+        <p className="intro">
           We are a network of Anglican Evangelical churches in Norfolk, England
           united by faith, love, and a commitment to share the good news and
           serving our communities.
@@ -25,8 +25,8 @@ export default function heroSection() {
         <Image
           className="hero-image"
           src="/fellowship.png"
-          width={460}
-          height={280}
+          width={480}
+          height={300}
           alt="The Great Commission Through Faith and Fellowship."
         />
       </div>

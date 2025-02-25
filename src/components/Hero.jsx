@@ -21,12 +21,20 @@ export default function heroSection() {
           to the authority of the Holy Bible. Our fellowship is steadfast in
           faith, actively reaching out to our communities to serve with love and
           compassion, living out the call to be salt and light in the world.
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
+            neque vitae nisl ultricies dapibus. Ut nec placerat metus. Vivamus
+            volutpat, nulla id dapibus gravida, nunc justo ullamcorper odio, nec
+            convallis odio erat at risus. Donec id dui ex. Proin sollicitudin
+            dui vel libero luctus, in cursus tortor pharetra.;
+          </p>
         </span>
+
         <Image
           className="hero-image"
           src="/fellowship.png"
-          width={480}
-          height={300}
+          width={460}
+          height={250}
           alt="The Great Commission Through Faith and Fellowship."
         />
       </div>

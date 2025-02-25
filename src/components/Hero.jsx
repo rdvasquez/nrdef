@@ -10,6 +10,12 @@ export default function heroSection() {
           We are a network of Anglican Evangelical churches in Norfolk, England
           united by faith, love, and a commitment to share the good news and
           serving our communities.
+          <br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
+          neque vitae nisl ultricies dapibus. Ut nec placerat metus. Vivamus
+          volutpat, nulla id dapibus gravida, nunc justo ullamcorper odio, nec
+          convallis odio erat at risus. Donec id dui ex. Proin sollicitudin dui
+          vel libero luctus, in cursus tortor pharetra.
         </p>
       </div>
       <div className="right">
@@ -33,7 +39,7 @@ export default function heroSection() {
         <Image
           className="hero-image"
           src="/fellowship.png"
-          width={460}
+          width={500}
           height={250}
           alt="The Great Commission Through Faith and Fellowship."
         />

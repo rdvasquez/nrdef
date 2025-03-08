@@ -11,7 +11,7 @@ export default function Footer() {
           className="footerImage"
           layout="fill"
           objectFit="cover"
-          src="/feet.png"
+          src="/bible.png"
           alt="feet of those who bring good news"
         />
       </div>

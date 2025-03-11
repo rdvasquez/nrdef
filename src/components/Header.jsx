@@ -17,18 +17,18 @@ export default async function Header() {
   console.log(user);
 
   return (
-    <header className="header">
-      <div className="image-wrapper">
+    <header className="header-container">
+      <div className="headerimage">
         <Image
-          className="heroImage"
-          src="/header.png"
+          className="header-image"
+          src="/bible.png"
           layout="fill"
           objectFit="cover"
           alt="fellowship"
         />
       </div>
 
-      <div className="leftside-header">
+      <div className="left-header">
         <Image
           className="logo"
           src="/logo.png"
@@ -36,10 +36,10 @@ export default async function Header() {
           height={200}
           alt="logo"
         />
+        <div className="right-header"></div>
         <span className="verse">
           {" "}
-          “How beautiful are the feet of those who bring good news” <br />
-          Romans 10:15
+          “How beautiful are the feet of those who bring good news” Romans 10:15
         </span>
       </div>
 
@@ -48,12 +48,12 @@ export default async function Header() {
         <Link href="/about">About</Link>
         <Link href="/resources">Resources</Link>
         <Link href="/events">Events</Link>
+        <Link href="/contact">Contact</Link>
         <div className="signIn">
           <SignedIn>
             <IsAdmin></IsAdmin>
           </SignedIn>
         </div>
-        <Link href="/contact">Contact</Link>
         <div className="signIn">
           <SignedIn>
             <span>

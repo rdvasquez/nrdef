@@ -5,7 +5,7 @@ body {
   margin: 0;
   max-width: 100vw;
   overflow-x: hidden;
-  background: linear-gradient(to right, #9c9b9a, #cbcac9, #ffffff);
+  background: white;
 }
 
 input {

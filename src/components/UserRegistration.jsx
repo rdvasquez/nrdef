@@ -89,6 +89,7 @@ export default async function UserRegistrationForm() {
               <option value="Mrs.">Mrs.</option>
               <option value="Ms.">Ms.</option>
             </select>
+
             <label htmlFor="firstname">
               <span>First Name </span>
               <strong>

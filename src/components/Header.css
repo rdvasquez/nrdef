@@ -1,94 +1,96 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
-.header {
+.header-container {
   font-family: "Inter", sans-serif;
-  position: relative;
-  /* z-index: -2; Brings header content above the overlay */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  font-size: 16px;
-  color: white;
-  padding: 20px;
-  margin-bottom: 60px;
-  border: 20px;
-}
-
-.image-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 305px;
+  display: grid;
+  max-width: 1600px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column: 1 / 5;
+  gap: 8px;
+  color: rgba(179, 12, 12, 0.655);
   z-index: -2;
-  overflow: hidden;
 }
 
-.leftside-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.headerimage {
+  position: absolute;
+  width: 100vw;
+  height: 500px;
+  z-index: -2; /* to place the image behind the content */
+  overflow: hidden; /* to prevent the image from overflowing the screen */
+  padding: 5px; /* padding to prevent the image from touching the edges of the screen */
 }
 
-.verse {
-  flex-direction: column;
-  font-family: serif;
+.left-header {
+  display: grid;
+  grid-template-columns: minmax(1fr, 2fr);
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+  gap: 7px;
   align-items: center;
-  font-style: italic;
   font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .navbar {
-  display: flex;
-  text-decoration: none;
-  font-family: sans-serif;
-  font-size: 20;
-  font-weight: 100;
-  justify-content: space-between;
-  align-items: center;
-  gap: 23px;
+  display: grid;
   position: relative;
+  grid-template-columns: minmax(1fr, 2fr); /* to make the navbar responsive */
+  grid-column: 3 / 6;
+  grid-row: 1; /* to place the navbar at the top of the screen */
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 15px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .navbar a {
   text-decoration: none;
-  color: white;
-  font-weight: bold;
+  color: #3b3a30;
 }
 
 .navbar a:hover {
-  color: #007bff;
+  color: #bc5a45;
 }
 
 .signIn {
-  margin-right: 15px; /* Adds space to the right of the Sign In button */
-  flex-direction: column;
-  font-size: 14px;
-  border: 10px;
+  display: grid;
+  grid-column: 6;
+  grid-row: 1;
+  font-size: 16px;
+  text-decoration: none;
   cursor: pointer;
-  top: 50px;
 }
 
 .joinUs {
+  display: grid;
   background-color: #007bff;
-  color: white;
   justify-content: center;
-  border: 10px;
   font-size: 14px;
   cursor: pointer;
-  top: 50px;
-  margin-left: 25px; /* Adds space to the left of the Sign Up button */
 }
 
 button:hover {
   background-color: #0056b3;
 }
 
-@media (max-width: 768px) {
-  .clerkHeader {
-    flex-direction: column;
-    align-items: flex-start;
+.verse {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr);
+  grid-column: 5 / 6;
+  grid-row: 12;
+  margin: 0 auto;
+  align-items: center;
+  font-family: serif;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+@media (max-width: 800px) {
+  .header-container {
+    padding: 20px;
   }
 }

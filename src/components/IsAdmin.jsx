@@ -31,7 +31,7 @@ export default async function IsAdmin() {
   }
   return false;
 }
-//Upon clicking Admin, the user will be redirected to the admin page. The user will be able to see the admin page only if the user is an admin. The user will not be able to see the admin page if the user is not an admin.
+//Upon clicking Admin, the user will be redirected to the admin page. The user will be able to see the admin page only if the user is an admin.
 //The IsAdmin component is used in the Header component. The IsAdmin component checks if the user is an admin. If the user is an admin, the IsAdmin component will display the Admin link. If the user is not an admin, the IsAdmin component will not display the Admin link.
 
 //Upon clicking Admin, all events need to be displayed. The events will be displayed in a table format. The table will have the following columns: Event ID, Event Name, Event Date, Event Time, Event Venue, and Event Description. The table will have the following buttons: Edit, Delete, and Add Event. The Edit button will allow the user to edit the event details. The Delete button will allow the user to delete the event. The Add Event button will allow the user to add a new event.

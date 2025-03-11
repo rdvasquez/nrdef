@@ -5,7 +5,7 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer-container">
       <div className="footerImage">
         <Image
           className="footerImage"
@@ -25,9 +25,7 @@ export default function Footer() {
           alt="logo"
         />
         <p className="footerverse">
-          “How beautiful are the feet of those <br /> who bring good news”{" "}
-          <br />
-          Romans 10:15
+          “How beautiful are the feet of those who bring good news” Romans 10:15
         </p>
       </div>
       <div className="rightside-footer">

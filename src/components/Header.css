@@ -5,9 +5,8 @@
   display: grid;
   max-width: 1600px;
   grid-template-columns: repeat(5, 1fr);
-  grid-column: 1 / 4;
-  margin: auto;
-  gap: 5px;
+  grid-column: 1 / 5;
+  gap: 8px;
   color: rgba(179, 12, 12, 0.655);
   z-index: -2;
 }
@@ -16,9 +15,9 @@
   position: absolute;
   width: 100vw;
   height: 500px;
-  z-index: -2;
-  overflow: hidden;
-  padding: 10px;
+  z-index: -2; /* to place the image behind the content */
+  overflow: hidden; /* to prevent the image from overflowing the screen */
+  padding: 5px; /* padding to prevent the image from touching the edges of the screen */
 }
 
 .left-header {
@@ -26,9 +25,8 @@
   grid-template-columns: minmax(1fr, 2fr);
   grid-column: 1 / 4;
   grid-row: 1 / 2;
-  gap: 5px;
+  gap: 7px;
   align-items: center;
-  font-family: "AG verse";
   font-size: 18px;
   font-weight: bold;
   font-style: italic;
@@ -36,11 +34,14 @@
 
 .navbar {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  position: relative;
+  grid-template-columns: minmax(1fr, 2fr); /* to make the navbar responsive */
   grid-column: 3 / 6;
-  grid-row: 1 / 6;
+  grid-row: 1; /* to place the navbar at the top of the screen */
   align-items: center;
-  gap: 5px;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 15px;
   font-size: 16px;
   font-weight: bold;
 }
@@ -53,11 +54,13 @@
 .navbar a:hover {
   color: #bc5a45;
 }
+
 .signIn {
   display: grid;
   grid-column: 6;
   grid-row: 1;
   font-size: 16px;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -74,9 +77,12 @@ button:hover {
 }
 
 .verse {
-  grid-column: 50 / span 10;
-  grid-row: 3;
-  align-items: space-between;
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr);
+  grid-column: 5 / 6;
+  grid-row: 12;
+  margin: 0 auto;
+  align-items: center;
   font-family: serif;
   font-size: 18px;
   font-weight: bold;

@@ -11,8 +11,8 @@ export default function Footer() {
           className="footerImage"
           layout="fill"
           objectFit="cover"
-          src="/bible.png"
-          alt="feet of those who bring good news"
+          src="/bible.webp"
+          alt="The Good News"
         />
       </div>
       <div className="leftside-footer">
@@ -33,14 +33,10 @@ export default function Footer() {
         All rights reserved.
         <div className="policy">
           <div className="copyright">
-            <Link href="/copyright" style={{ textDecoration: "none" }}>
-              Copyright Policy
-            </Link>
+            <Link href="/copyright">Copyright Policy</Link>
           </div>
           <div className="privacy">
-            <Link href="/privacy" style={{ textDecoration: "none" }}>
-              Privacy Policy
-            </Link>
+            <Link href="/privacy">Privacy Policy</Link>
           </div>
         </div>
       </div>

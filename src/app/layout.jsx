@@ -8,7 +8,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 export const metadata = {
   title: "Norwich Diocesan Evangelical Fellowship",
   description:
-    "A network of Anglican Evangelical churches across Norwich, Norfolk, and the Waveney Valley",
+    "A network of around 20 evangelical Anglican churches in Norfolk and the Waveney Valley",
   openGraph: {
     type: "website",
   },

@@ -69,15 +69,6 @@
 
 .image-overlay {
   grid-column: 1 / 2;
-
-  /* grid-row: 2 / 3; */
-  /* overflow: hidden; */
-}
-
-.hero-image {
-  grid-column: 2 / 3;
-  padding: 20px;
-  overflow: hidden;
   width: 500px;
   height: 300px; /* Adjust as needed */
   border-radius: 15px;
@@ -102,7 +93,6 @@
   height: 300px;
   position: relative;
   border-radius: 15px;
-
 }
 
 .bible-study {

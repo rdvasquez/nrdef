@@ -31,14 +31,15 @@
 }
 
 .registrationForm {
-  /* background-color: #dbcbbd; */
+  background-color: #dbcbbd;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   gap: 10px;
-  max-width: 50%;
+  width: 80%;
+  max-width: 750px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .formOutline {
@@ -62,7 +63,8 @@
 
 .formSubmitbutton {
   height: 60px;
-  width: 200px;
+  width: 80%;
+  max-width: 750px;
   padding: 10px 20px;
   background-color: #cdc1ff;
   color: rgba(0, 0, 10, 0.708);

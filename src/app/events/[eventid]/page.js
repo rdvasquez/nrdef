@@ -49,7 +49,7 @@ export default async function SingleEventPage({ params }) {
               <legend className={styles.formTitle}>Event Registration</legend>
               <div className={styles.registrationForm}>
                 <label htmlFor="title">
-                  <span>Title: </span>
+                  <span>Title </span>
                   <strong>
                     <span aria-label="required">*</span>
                   </strong>
@@ -66,7 +66,7 @@ export default async function SingleEventPage({ params }) {
                   <option value="Miss.">Ms.</option>
                 </select>
                 <label htmlFor="firstname">
-                  <span>First Name: </span>
+                  <span>First Name </span>
                   <strong>
                     <span aria-label="required">*</span>
                   </strong>
@@ -78,7 +78,7 @@ export default async function SingleEventPage({ params }) {
                   placeholder="Enter your first name"
                   required
                 />
-                <label htmlFor="lastname">Last Name:</label>
+                <label htmlFor="lastname">Last Name</label>
                 <input
                   type="text"
                   name="lastname"
@@ -86,7 +86,7 @@ export default async function SingleEventPage({ params }) {
                   placeholder="Enter your last name"
                   required
                 />
-                <label htmlFor="email">Email:</label>
+                <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   name="email"
@@ -95,7 +95,7 @@ export default async function SingleEventPage({ params }) {
                   required
                 />
                 <SelectDateTime eventDetails={eventDetails} />
-                <label>Select diet:</label>
+                <label>Select diet</label>
                 <label>
                   <input type="radio" name="dietoption" value="Vegetarian" />{" "}
                   Vegetarian

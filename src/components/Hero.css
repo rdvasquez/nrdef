@@ -3,45 +3,44 @@
 .hero-container {
   display: grid;
   position: relative;
-  width: 100%;
-  max-width: 1300px;
-  grid-template-columns: repeat(2, 1fr); /* modification not needed */
+  width: 95%;
+  max-width: 1600px;
+  grid-template-columns: minmax(300px, 1fr); /* modification not needed */
   grid-column: 1;
-  margin: 190px auto;
-  gap: 10px;
-  padding: 15px;
-  color: #3b3a30;
-  text-align: center;
+  margin: 150px auto;
+  gap: 5px;
+  padding-bottom: 80px;
+  color: #8b4513;
 }
 
 .main-content {
+  font-family: "Inter";
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-column: 1 / -1;
-  line-height: 33px;
+  line-height: 50px;
   text-align: left;
-  gap: 10px;
+  gap: 2px;
+  padding: 5px;
+  font-size: 1.2rem;
 }
 
 .h1 {
   grid-column: 1 / -1;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
 }
 
 .intro {
-  font-size: 19px;
+  font-size: 20px;
 }
 
 .faith-image {
   grid-column: 1 / -1;
-  grid-row: 2;
-  width: 80%;
-  height: 300px;
-  margin: 0 auto;
+  grid-row: 2 / 3;
+  width: 100%;
+  height: 70%;
   overflow: hidden;
   border-radius: 15px;
+  object-fit: cover;
 }
 
 .Statement-of-Faith {
@@ -51,27 +50,29 @@
   transform: translate(-50%, -50%);
   color: whitesmoke;
   text-align: center;
-  font-size: 18px;
-  z-index: 1; /* Ensure the text is above the image */
+  font-size: 20px;
+  z-index: 10;
 }
 
 .image-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* modification not needed */
-  grid-template-rows: repeat(2, 1fr) 100px;
+  grid-template-rows: repeat(2, 1fr);
   position: relative; /* key to the overlay */
   width: 500px; /* no need to modify */
   height: 300px; /* no need to modify */
-  margin: 0 auto; /* no need to modify */
-  gap: 10px;
-  padding: 5px;
+  margin-left: 100px auto; /* no need to modify */
+  gap: 20px;
 }
 
 .image-overlay {
+  position: relative;
   grid-column: 1 / 2;
+  border-radius: 15px;
   width: 500px;
   height: 300px; /* Adjust as needed */
-  border-radius: 15px;
+  object-fit: cover;
+  margin-bottom: 20px;
 }
 
 .text-overlay {
@@ -80,30 +81,37 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: #3b3a30;
-  text-align: justify;
+  text-align: left;
   font-size: 18px;
-  padding: 10px;
-  width: 90%;
-  z-index: 1; /* Ensure the text is above the image */
+  width: 85%;
+  z-index: 2;
 }
 
 .hero-image {
-  grid-column: 3;
-  width: 480px;
+  grid-column: 3 / 5;
+  width: 500px;
   height: 300px;
   position: relative;
   border-radius: 15px;
+  object-fit: cover;
+  margin-bottom: 20px;
 }
 
 .bible-study {
+  grid-column: 3 / 5;
   grid-row: 2 / 3;
   width: 500px;
   height: 300px;
   position: relative;
   border-radius: 15px;
+  object-fit: cover;
+  margin-bottom: 20px;
 }
-@media (max-width: 800px) {
+
+/* Small screens (tiny phones) */
+@media (max-width: 480px) {
   .hero-container {
-    padding: 20px;
+    padding: 10px;
+    text-align: center;
   }
 }

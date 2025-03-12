@@ -2,4 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  margin-top: 160px;
+  padding-top: 20px;
+  position: relative;
 }

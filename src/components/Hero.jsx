@@ -21,18 +21,6 @@ export default function heroSection() {
         <div className="Faith"></div>
         <h3 className="Statement-of-Faith">View our Statement of Faith</h3>
       </div>
-
-      <div className="right">
-        <h2 className="content1">
-          The Great Commission Through Faith and Fellowship
-        </h2>
-        <div className="content2">
-          We are united in the teachings of our Lord Jesus Christ and hold fast
-          to the authority of the Holy Bible. Our fellowship is steadfast in
-          faith, actively reaching out to our communities to serve with love and
-          compassion, living out the call to be salt and light in the world.
-        </div>
-
       <div className="image-container">
         <Image
           className="image-overlay"
@@ -54,7 +42,6 @@ export default function heroSection() {
           </span>
         </div>
         <div className="image-right"></div>
-
         <Image
           className="hero-image"
           src="/nrcathedral.jpeg"

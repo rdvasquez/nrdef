@@ -9,7 +9,7 @@ export default function heroSection() {
         <p className="intro">
           A network of around 20 evangelical Anglican churches in Norfolk and
           the Waveney Valley united by faith, love, and a commitment to sharing
-          the good news and our communities.
+          the good news in our communities.
         </p>
         <Image
           className="faith-image"

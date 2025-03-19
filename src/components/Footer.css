@@ -4,14 +4,13 @@
   font-family: "Inter", sans-serif;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: minmax(1fr, 2fr); /* Default layout: 4 columns */
   max-width: 1600px;
   z-index: 1;
   align-items: end;
   color: #3b3a30;
-  min-height: 450px;
-  padding: 80px;
-  margin-top: 50%;
+  height: auto;
+  padding: 100px;
 }
 
 .leftside-footer {
@@ -31,7 +30,7 @@
 .footerImage {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 80%;
   z-index: -1;
 }
 
@@ -65,11 +64,32 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Responsive Design (For Mobile) */
-@media (max-width: 768px) {
+/* Small Screens - Phones (max-width: 600px) */
+@media (max-width: 600px) {
   .footer-container {
     grid-template-columns: 1fr; /* Stack items in one column */
     text-align: center;
-    padding: 30px 5%;
+    padding: 20px 5%; /* Adjust padding for smaller screens */
+    margin-top: 20%;
+  }
+
+  .footerverse {
+    grid-column: 1 / -1;
+    font-size: 14px; /* Adjust font size for small screens */
+  }
+
+  .leftside-footer,
+  .rightside-footer {
+    text-align: center;
+    grid-column: 1 / -1; /* Stack content in one column */
+    margin-bottom: 10px;
+  }
+
+  .policy {
+    justify-content: center; /* Center the policy links */
+  }
+
+  .policy a {
+    font-size: 14px; /* Adjust font size */
   }
 }

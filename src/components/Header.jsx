@@ -35,7 +35,6 @@ export default async function Header() {
           height={200}
           alt="logo"
         />
-        <div className="right-header"></div>
         <span className="verse">
           {" "}
           “How beautiful are the feet of those who bring good news” Romans 10:15

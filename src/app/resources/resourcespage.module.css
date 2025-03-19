@@ -1,0 +1,39 @@
+.resources-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.community {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.outreachimage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px; /* Space between the images */
+  justify-items: center; /* Centers the images horizontally */
+  margin-bottom: 20px;
+}
+
+.outreach,
+.outreach1,
+.outreach2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.caption {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.description {
+  font-size: 1rem;
+  max-width: 800px;
+  margin-top: 20px;
+}

@@ -24,9 +24,81 @@ input:hover {
   box-shadow: 3px 3px 5px rgb(197, 194, 194);
 }
 
-.About {
+.about {
   font-size: 18px;
-  font-style: inter;
+  font-style: "Inter";
   margin-right: 1rem;
   margin-bottom: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .outreachimage {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .outreachimage {
+    grid-template-columns: 1fr; /* 1 column for smaller screens */
+  }
+
+  .community {
+    font-size: 1.5rem; /* Smaller font size for smaller screens */
+  }
+
+  .caption {
+    font-size: 0.9rem; /* Adjust caption size for readability on small screens */
+  }
+
+  .description {
+    font-size: 0.9rem; /* Adjust description font size */
+  }
+}
+
+/* Small desktop (up to 1024px) */
+@media (max-width: 1024px) {
+  .header-container {
+    padding: 20px;
+  }
+
+  .navbar {
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 18px;
+  }
+
+  .verse {
+    font-size: 18px;
+    padding-top: 90px;
+  }
+}
+
+/* Small Screens - Phones (max-width: 600px) */
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr; /* Stack items in one column */
+    text-align: center;
+    padding: 20px 5%; /* Adjust padding for smaller screens */
+    margin-top: 20%;
+  }
+
+  .footerverse {
+    grid-column: 1 / -1;
+    font-size: 14px; /* Adjust font size for small screens */
+  }
+
+  .leftside-footer,
+  .rightside-footer {
+    text-align: center;
+    grid-column: 1 / -1; /* Stack content in one column */
+    margin-bottom: 10px;
+  }
+
+  .policy {
+    justify-content: center; /* Center the policy links */
+  }
+
+  .policy a {
+    font-size: 14px; /* Adjust font size */
+  }
 }

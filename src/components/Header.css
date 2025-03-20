@@ -147,20 +147,3 @@ button:hover {
     font-size: 15px;
   }
 }
-
-/* Small desktop (up to 1024px) */
-@media (max-width: 1024px) {
-  .header-container {
-    padding: 20px;
-  }
-
-  .navbar {
-    grid-template-columns: repeat(4, 1fr);
-    font-size: 18px;
-  }
-
-  .verse {
-    font-size: 18px;
-    padding-top: 90px;
-  }
-}

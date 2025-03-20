@@ -25,19 +25,20 @@ export default function Footer() {
           alt="logo"
         />
         <p className="footerverse">
-          “How beautiful are the feet of those who bring good news” Romans 10:15
+          “How beautiful are the feet of those who bring good news.” Romans
+          10:15
         </p>
       </div>
-      <div className="rightside-footer">
-        © {new Date().getFullYear()} Norwich Diocesan Evangelical Fellowship.
-        All rights reserved.
-        <div className="policy">
-          <div className="copyright">
-            <Link href="/copyright">Copyright Policy</Link>
-          </div>
-          <div className="privacy">
-            <Link href="/privacy">Privacy Policy</Link>
-          </div>
+      <div className="policy">
+        <div className="copyright">
+          <Link href="/copyright">Copyright Policy</Link>
+        </div>
+        <div className="privacy">
+          <Link href="/privacy">Privacy Policy</Link>
+        </div>
+        <div className="rightside-footer">
+          © {new Date().getFullYear()} Norwich Diocesan Evangelical Fellowship.
+          All rights reserved.
         </div>
       </div>
     </footer>

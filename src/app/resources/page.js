@@ -11,8 +11,8 @@ export default function ResourcesPage() {
             <Image
               className="outreach"
               src="/outreach.png"
-              width={400}
-              height={300}
+              width={300}
+              height={200}
               alt="youth outreach"
             />
             <figcaption className="caption">Youth Outreach Program</figcaption>
@@ -22,8 +22,8 @@ export default function ResourcesPage() {
             <Image
               className="outreach1"
               src="/outreach1.png"
-              width={400}
-              height={300}
+              width={300}
+              height={200}
               alt="community outreach"
             />
             <figcaption className="caption">
@@ -35,8 +35,8 @@ export default function ResourcesPage() {
             <Image
               className="outreach3"
               src="/outreach3.png"
-              width={400}
-              height={300}
+              width={300}
+              height={200}
               alt="donation"
             />
             <figcaption className="caption">

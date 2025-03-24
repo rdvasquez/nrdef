@@ -27,7 +27,7 @@ export default async function Header() {
           alt="fellowship"
         />
       </div>
-      <div className="left-header">
+      <div className="header-logo">
         <Image
           className="logo"
           src="/logo.png"
@@ -37,7 +37,8 @@ export default async function Header() {
         />
         <span className="verse">
           {" "}
-          “How beautiful are the feet of those who bring good news” Romans 10:15
+          “How beautiful are the feet of those who bring good news.” Romans
+          10:15
         </span>
       </div>
       <nav className="navbar">

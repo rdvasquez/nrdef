@@ -1,11 +1,10 @@
 import Image from "next/image";
-import "./resourcespage.module.css";
 
 export default function ResourcesPage() {
   return (
     <div className="resources-container">
       <div>
-        <h1 className="community">What we do for the community?</h1>
+        <div className="community">What we do for the community?</div>
         <div className="outreachimage">
           <figure className="outreach">
             <Image

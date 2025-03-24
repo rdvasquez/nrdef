@@ -2,12 +2,11 @@
   display: grid;
   position: relative;
   width: 100%;
-  max-width: 1500px;
+  max-width: 1600px;
   grid-template-columns: minmax(300px, 1fr);
   grid-column: 1;
   margin: 0 auto;
   padding-bottom: 550px;
-  border: 1px solid red;
   color: #8b4513;
 }
 
@@ -18,8 +17,8 @@
   grid-column: 1 / -1;
   line-height: 50px;
   text-align: left;
-  gap: 0;
-  padding-bottom: 0;
+  gap: 20px;
+  padding-bottom: 20px;
   font-size: 1.2rem;
 }
 
@@ -61,7 +60,7 @@
   width: 600px;
   height: 300px; /* no need to modify */
   margin-left: 50px; /* no need to modify */
-  margin-top: -125px;
+  margin-top: -200px;
   gap: 10px;
 }
 

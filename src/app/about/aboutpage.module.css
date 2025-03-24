@@ -1,16 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
 .aboutContainer {
-  font-family: "Inter";
-  position: relative;
   display: grid;
-  grid-template-columns: minmax(100px, 1fr);
-  grid-column: 1 / 4;
-  gap: 20px; /* Space between grid items */
-  padding-bottom: 150px;
+  grid-template-columns: minmax(300px, 1fr);
   max-width: 1200px;
-  margin: 50px auto; /* Center the container */
+  color: #3b3a30;
 }
 
 .content1 {
+  grid-column: 1 / 2;
   font-size: 2rem;
   font-weight: bold;
   color: #333;
@@ -19,6 +17,7 @@
 .description {
   grid-column: 2 / 3;
   font-size: 18px;
+  margin: 30%;
   line-height: 1.6;
   color: #666;
 }
@@ -26,7 +25,7 @@
 .content2 {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 50px;
   color: #333;
 }
 

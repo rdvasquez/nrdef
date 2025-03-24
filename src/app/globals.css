@@ -27,14 +27,19 @@ input:hover {
 .resources-container {
   font-family: "Inter";
   display: grid;
-  position: relative;
   width: 100%;
-  max-width: 1200px;
-  grid-template-columns: minmax(100px, 1fr); /* modification not needed */
-  grid-column: 1 / 6;
-  margin: 50px auto; /* modification not needed */
+  max-width: 900px;
+  grid-template-columns: minmax(300px, 3fr); /* modification not needed */
+  grid-column: 1;
+  margin: 0 auto; /* modification not needed */
   gap: 20px;
-  padding-bottom: 170px; /* modification not needed */
+  margin-top: -100px;
+  /* padding-top: 400px; */
+  padding-bottom: 150px;
+  padding-left: 20px;
+  padding-right: 0;
+  background-color: blue;
+  overflow: hidden;
 }
 
 .community {
@@ -44,6 +49,7 @@ input:hover {
 .outreach,
 .outreach1,
 .outreach3 {
+  max-width: 100%;
   border-radius: 15px;
 }
 

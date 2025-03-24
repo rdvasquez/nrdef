@@ -1,15 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
-
 .hero-container {
   display: grid;
   position: relative;
   width: 100%;
   max-width: 1500px;
   grid-template-columns: minmax(300px, 1fr);
-  grid-column: 1 / 3;
-  margin: 150px auto;
+  grid-column: 1;
+  margin: 0 auto;
   padding-bottom: 550px;
-  /* border: 1px solid red; */
+  border: 1px solid red;
   color: #8b4513;
 }
 

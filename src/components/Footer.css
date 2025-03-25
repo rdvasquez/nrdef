@@ -19,12 +19,9 @@
 .leftside-footer {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 7px;
 }
-
-/* .logo {
-  display: flex;
-} */
 
 .footerverse {
   font-family: sans;
@@ -41,7 +38,6 @@
 }
 
 .rightside-footer {
-  display: flex;
   flex-direction: column;
   align-items: flex-end;
   text-align: right;

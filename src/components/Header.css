@@ -34,9 +34,9 @@ header {
 
 /* Logo and Verse Section */
 .header-logo {
+  position: fixed;
   display: flex;
   align-items: center;
-  position: absolute;
   left: 0;
   gap: 400px;
 }

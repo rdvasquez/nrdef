@@ -4,9 +4,6 @@ import SelectDateTime from "@/components/SelectDateTime.jsx";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import nodemailer from "nodemailer";
-// import dotenv from "dotenv";
-// dotenv.config();
-// console.log(process.env.SMTP_HOST)
 
 export default async function SingleEventPage({ params }) {
   const { eventid } = await params;

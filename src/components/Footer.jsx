@@ -17,7 +17,7 @@ export default function Footer() {
           />
           <p className="footerverse">
             “How beautiful are the feet of those who bring good news.” <br />
-            <span className="bible-reference">Romans 10:15</span>
+            Romans 10:15
           </p>
         </div>
 

@@ -3,116 +3,91 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-header {
-  position: relative;
-  width: 100%;
-  z-index: 1;
-}
-
+/* Header Container */
 .header-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr) 400px;
-  max-width: 1300px;
+  font-family: "Inter" sans-serif;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
   position: relative;
-  z-index: 1;
-  padding: 0 auto;
-  color: #3b3a30;
-}
-
-.headerimage {
-  position: absolute;
   width: 100%;
-  height: 100%;
-  z-index: -1;
-  object-fit: cover;
+  height: auto; /* Allow dynamic height based on content */
 }
 
-.header-logo {
+/* Header Image (background) */
+.headerimage {
   position: relative;
+  width: 100%;
+  height: 400px; /* Adjust the height as needed */
+  object-fit: cover; /* Make sure the image covers the area without stretching */
+}
+
+/* Logo and Text */
+.header-logo {
+  position: absolute;
+  top: 20px;
+  left: 10px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  justify-content: end;
+  padding: 5px;
 }
 
-/* .signIn {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-} */
+.logo {
+  max-width: 200px;
+  height: auto;
+}
 
 .verse {
-  font-family: sans;
-  font-size: 16px;
+  margin-top: 40px;
+  max-width: 600px;
+  font-family: "Inter", sans-serif; /* Apply Inter font */
   font-style: italic;
-  flex-shrink: 0;
-  color: #522504;
-  position: relative;
-  z-index: 1;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  font-size: 1.2rem;
+  font-weight: 400; /* Adjust weight if needed */
+  text-align: center;
+  color: #3b3a30; /* Adjust color if necessary */
 }
 
 /* Navigation Bar */
-/* .navbar {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr) 1fr);
-  grid-column: 2 / 3;
-  max-width: 800px;
-  position: relative;
-  justify-content: space-around;
-  align-items: center;
-  margin-left: 5px;
-  flex-wrap: wrap;
-  font-size: 18px;
-  font-weight: bold;
-} */
-
 .navbar {
-  display: grid;
-  grid-column: 2 / 3;
-  align-items: center;
-  justify-content: space-evenly;
-  max-width: 1100;
-  padding-bottom: 5%;
+  position: absolute;
   font-size: 18px;
-  font-weight: bold;
+  top: 20px;
+  right: 0;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 5px;
+  z-index: 10;
 }
 
 .navbar a {
-  text-decoration: none;
+  color: #3b3a30;
   font-weight: bold;
-  padding: 5px;
-  color: #522504;
+  text-decoration: none;
+  padding: 10px;
 }
 
 .navbar a:hover {
-  color: #00b3ff;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Sign-in and User Section */
+/* Sign-In/Sign-Out */
 .signIn {
-  grid-column: 6 / 7;
-  grid-row: 1;
-  padding-top: 5px;
-  left: 0;
-  font-size: 16px;
-  cursor: pointer;
+  display: flex;
+  gap: 5px;
 }
 
 .joinUs {
-  background-color: #00a2ff;
-  color: white;
-  padding: 8px 12px;
+  background-color: #7bd4ff;
+  color: #3b3a30;
+  padding: 10px;
   border: none;
-  font-size: 14px;
   cursor: pointer;
-  margin-top: 5px;
-  border-radius: 5px;
 }
 
 .joinUs:hover {
-  background-color: #0056b3;
+  background-color: #7bd4ff;
 }

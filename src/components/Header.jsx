@@ -36,9 +36,8 @@ export default async function Header() {
           alt="logo"
         />
         <span className="verse">
-          {" "}
-          “How beautiful are the feet of those who bring good news.” <br />
-          Romans 10:15
+          “How beautiful are the feet of those who bring good news.” Romans
+          10:15
         </span>
       </div>
       <nav className="navbar">

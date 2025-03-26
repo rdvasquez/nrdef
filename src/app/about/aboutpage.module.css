@@ -1,37 +1,109 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
-
+/* Container for the entire page */
 .aboutContainer {
   display: grid;
-  grid-template-columns: minmax(300px, 1fr);
-  max-width: 1200px;
-  color: #3b3a30;
+  place-items: center; /* Centers content both vertically and horizontally */
+  height: 100vh;
+  padding: 5px;
+  box-sizing: border-box;
 }
 
+/* Content container using Grid */
+.content {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column layout for small screens */
+  gap: 20px;
+  max-width: 900px;
+  width: 100%;
+  padding: 10px;
+}
+
+/* Heading 1 styles */
 .content1 {
-  grid-column: 1 / 2;
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 25px;
+  font-weight: 700;
   color: #333;
+  text-align: center;
+  line-height: 1.2;
 }
 
+/* Description paragraph styles */
 .description {
-  grid-column: 2 / 3;
-  font-size: 18px;
-  margin: 30%;
-  line-height: 1.6;
-  color: #666;
+  font-size: 24px;
+  color: #555;
+  line-height: 1.9;
+  text-align: justify;
+  letter-spacing: 0.5px;
 }
 
+/* Heading 2 styles */
 .content2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-top: 50px;
+  font-size: 22px;
+  font-weight: 600;
   color: #333;
+  text-align: center;
 }
 
-.list {
-  list-style-type: disc;
+/* List styles */
+ul.list {
+  display: flex;
+  gap: 10px; /* Space between list items */
+  padding-left: 20px; /* Indentation for list */
   font-size: 18px;
-  margin-top: 10px;
-  color: #444;
+  color: #555;
+  list-style-type: none; /* Remove default bullets */
+}
+
+ul.list li {
+  align-items: center;
+  position: relative;
+  line-height: 1.6;
+}
+
+ul.list li::before {
+  content: "• ";
+  position: absolute;
+  left: -25px; /* Position the bullet point */
+  color: #007bff; /* Blue bullet points */
+  font-size: 1.5rem;
+}
+
+/* Media Query for larger screens */
+@media (min-width: 768px) {
+  .content {
+    grid-template-columns: 1fr 1fr; /* Two columns layout for larger screens */
+    grid-template-rows: auto;
+    gap: 40px;
+  }
+
+  .content1 {
+    font-size: 3rem; /* Increase heading size for larger screens */
+  }
+
+  .description {
+    font-size: 1.3rem; /* Increase font size for description */
+  }
+
+  .content2 {
+    font-size: 2rem; /* Increase size for subheading */
+  }
+
+  ul.list {
+    padding-left: 40px; /* More space for list indentation */
+  }
+}
+
+/* Media Query for very large screens (large desktops) */
+@media (min-width: 1300px) {
+  .content {
+    max-width: 1200px; /* Max width for larger desktops */
+  }
+
+  .content1 {
+    font-size: 3.5rem; /* Bigger font size for very large screens */
+  }
+
+  .content2 {
+    font-size: 2.2rem; /* Adjust size for larger subheading */
+  }
 }

@@ -1,4 +1,4 @@
-.eventDisplayBox,
+/* .eventDisplayBox,
 .eventDisplayHeadingBox {
   margin: auto;
   display: grid;
@@ -20,4 +20,58 @@
 }
 .eventDisplayBox:nth-child(odd) {
   background-color: #d3d3d3;
+} */
+
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Event Display Heading Box */
+.eventDisplayHeadingBox {
+  display: flex;
+  max-width: 800px;
+  justify-content: space-between;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-left: 50px;
+  border-radius: 8px;
+}
+
+.h3 {
+  margin-left: 50px;
+}
+.eventDisplayHeadingBox h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Styling for individual event display boxes */
+.eventDisplayBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  max-width: 800px;
+  padding: 15px;
+  margin-bottom: 30px;
+  margin-left: 50px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.eventDisplayBox:hover {
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.2);
+}
+
+/* Link styling for event titles */
+.eventDisplayBox a {
+  font-size: 1.2rem;
+  font-weight: 600;
 }

@@ -61,123 +61,161 @@ input:hover {
   max-width: 800px;
 }
 
-/* Responsive Design */
-@media (max-width: 1224px) {
+/* Media Queries for Different Screen Sizes */
+
+/* Mobile Devices (up to 600px) */
+@media (max-width: 600px) {
   .header-container {
-    padding: 50px; /* Reduce padding */
-    gap: 10px;
+    grid-template-columns: 1fr; /* Single column layout */
+    padding: 10px;
+  }
+
+  .header-logo {
+    grid-template-columns: 1fr; /* Stack the logo */
+    justify-content: center; /* Center the logo */
+  }
+
+  .verse {
+    grid-column: 1; /* Ensure verse takes up full width */
+    font-size: 14px;
+    margin-right: 0;
+    padding-bottom: 50px; /* Reduce space at the bottom */
+    max-width: 100%; /* Ensure verse stays within the container */
   }
 
   .navbar {
-    gap: 10px;
+    grid-column: 1;
+    grid-template-columns: 1fr; /* Single column navigation */
+    padding-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    max-width: 100%; /* Ensure navbar stays within container */
+  }
+
+  .navbar a {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .signIn,
+  .joinUs {
+    font-size: 14px;
+  }
+}
+
+/* Tablets (600px to 900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+  .header-container {
+    grid-template-columns: 1fr; /* Single column layout */
     padding: 15px;
   }
 
-  .navbar a {
-    padding: 10px 15px;
-    font-size: 16px;
+  .header-logo {
+    grid-template-columns: 1fr; /* Stack the logo */
+    justify-content: center;
   }
 
   .verse {
+    grid-column: 1; /* Ensure verse takes up full width */
     font-size: 16px;
-  }
-}
-
-@media (max-width: 992px) {
-}
-.header-container {
-  grid-template-columns: 1fr; /* Stack elements */
-  text-align: center;
-  padding: 30px;
-}
-
-.header-logo {
-  position: static; /* Reset positioning */
-  margin: 0 auto;
-}
-
-.navbar {
-  flex-direction: row;
-  gap: 10px;
-}
-
-.navbar a {
-  padding: 10px;
-  font-size: 14px;
-}
-
-.verse {
-  text-align: center;
-  font-size: 14px;
-}
-
-.signIn {
-  font-size: 16px;
-  text-align: center;
-  padding-top: 10px;
-}
-
-@media (max-width: 768px) {
-  .header-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .verse {
-    bottom: 80px;
-    font-size: 14px;
+    margin-right: 0;
+    padding-bottom: 100px; /* Adjust space at the bottom */
+    max-width: 100%; /* Ensure verse stays within the container */
   }
 
   .navbar {
-    flex-direction: row;
-    gap: 10px;
+    grid-column: 1;
+    grid-template-columns: 1fr; /* Single column navigation */
+    padding-top: 30px;
+    font-size: 18px;
+    max-width: 100%; /* Ensure navbar stays within container */
   }
 
   .navbar a {
-    padding: 8px;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .header-logo {
-    flex-direction: column; /* Stack logo & verse vertically */
-    align-items: center; /* Center align */
-    gap: 10px; /* Reduce spacing */
-    position: static; /* Prevent absolute positioning issues */
+    padding: 10px;
+    font-size: 18px;
   }
 
-  .verse {
-    position: static; /* Remove fixed positioning */
-    text-align: center; /* Center the text */
-    font-size: 16px; /* Reduce font size for small screens */
-    top: 0; /* Remove unnecessary top offset */
-    white-space: normal; /* Allow text to wrap properly */
-    max-width: 90%; /* Prevent overflow on smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .header-logo {
-    width: 100px;
-  }
-
-  .verse {
-    font-size: 12px;
-    bottom: 50px;
-  }
-
+  .signIn,
   .joinUs {
-    font-size: 12px;
-    padding: 6px 10px;
+    font-size: 14px;
   }
 }
 
-@media (max-width: 1300px) {
-  .footer-container {
-    padding: 10px; /* Reduce padding */
-    gap: 10px;
+/* Desktops (900px to 1300px) */
+@media (min-width: 900px) and (max-width: 1300px) {
+  .header-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+    padding: 30px;
+  }
+
+  .header-logo {
+    grid-template-columns: 1fr; /* Stack the logo */
+  }
+
+  .verse {
+    grid-column: 2; /* Keep it in the second column */
+    font-size: 18px;
+    margin-right: 1.5%;
+    padding-bottom: 150px;
+    max-width: 100%; /* Ensure verse stays within the container */
+  }
+
+  .navbar {
+    grid-column: 2;
+    grid-row: 1;
+    padding-top: 12%;
+    font-size: 18px;
+    max-width: 100%; /* Ensure navbar stays within container */
+  }
+
+  .navbar a {
+    padding: 5px;
+    font-size: 18px;
+  }
+
+  .signIn,
+  .joinUs {
+    font-size: 16px;
+  }
+}
+
+/* Larger Desktops (1300px and above) */
+@media (min-width: 1300px) {
+  .header-container {
+    grid-template-columns: repeat(3, 1fr); /* Three columns layout */
+    padding: 3%;
+  }
+
+  .header-logo {
+    grid-template-columns: repeat(2, 500px) 600px; /* Maintain original layout */
+    justify-content: flex-start; /* Keep logo left-aligned */
+  }
+
+  .verse {
+    grid-column: 2;
+    font-size: 18px;
+    margin-right: 1.5%;
+    padding-bottom: 150px;
+    max-width: 100%; /* Ensure verse stays within the container */
+  }
+
+  .navbar {
+    grid-column: 2;
+    grid-row: 1;
+    padding-top: 12%;
+    font-size: 18px;
+    max-width: 100%; /* Ensure navbar stays within container */
+  }
+
+  .navbar a {
+    padding: 5px;
+    font-size: 18px;
+  }
+
+  .signIn,
+  .joinUs {
+    font-size: 16px;
   }
 }
 
@@ -208,52 +246,5 @@ input:hover {
 
   .policy a {
     font-size: 14px; /* Adjust font size */
-  }
-}
-
-/* Responsive Design */
-@media (min-width: 768px) {
-  .aboutContainer {
-    grid-template-columns: 1fr 3fr; /* Two columns for tablet and up */
-    gap: 40px;
-  }
-
-  .content {
-    grid-column: 2 / 3; /* Content takes the second column */
-  }
-
-  .content1 {
-    font-size: 2.5rem; /* Adjust heading size for larger screens */
-  }
-
-  .description {
-    font-size: 1.3rem; /* Larger font size for better readability */
-  }
-
-  .content2 {
-    font-size: 1.8rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .aboutContainer {
-    grid-template-columns: 1fr 4fr; /* Wider layout for larger screens */
-    gap: 50px;
-  }
-
-  .content {
-    grid-column: 2 / 3; /* Keep the content centered */
-  }
-
-  .content1 {
-    font-size: 3rem; /* Adjust font size for larger screens */
-  }
-
-  .description {
-    font-size: 1.4rem;
-  }
-
-  .content2 {
-    font-size: 2rem;
   }
 }

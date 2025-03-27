@@ -15,7 +15,7 @@ export default function heroSection() {
         className="faith-image"
         src="/faith.png"
         width={600}
-        height={250}
+        height={300}
         alt="Our Statement of Faith"
       />
       <Link className="Statement-of-Faith" href="#" target="_blank">
@@ -28,18 +28,17 @@ export default function heroSection() {
         height={300}
         alt="The Great Commission."
       />
-      {/* <div className="text-overlay">
+      <article className="text-overlay">
         <h2 className="content1">
           Furthering the Great Commission through faith and fellowship
         </h2>
-        <span className="content2">
+        <p className="content2">
           We are united in the teachings of our Lord Jesus Christ and hold fast
           to the authority of the Holy Bible. Our fellowship is steadfast in
           faith, actively reaching out to our communities to serve with love and
           compassion, living out the call to be salt and light in the world.
-        </span>
-      </div> */}
-      {/* <div className="image-right"></div> */}
+        </p>
+      </article>
       <Image
         className="hero-image"
         src="/nrcathedral.jpeg"
@@ -48,7 +47,6 @@ export default function heroSection() {
         alt="The Norwich Cathedral."
       />
       <div className="GetInTouch"></div>
-
       <Image
         className="bible-study"
         src="/BibleStudy.png"

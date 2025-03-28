@@ -31,7 +31,7 @@
 }
 
 .registrationForm {
-  background-color: #dbcbbd;
+  /* background-color: #dbcbbd; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -63,7 +63,7 @@
 
 .formSubmitbutton {
   height: 60px;
-  width: 80%;
+  width: 75%;
   max-width: 750px;
   padding: 10px 20px;
   background-color: #cdc1ff;
@@ -71,6 +71,7 @@
   font-family: "Times New Roman", Times, serif;
   font-size: x-large;
   font-weight: 800;
+  letter-spacing: 1px;
   border: solid 3px#6555de;
   border-radius: 5px;
 }

@@ -116,6 +116,7 @@ export default async function SingleEventPage({ params }) {
                 name="eventname"
                 value={decodeURIComponent(parts[1])}
                 hidden
+                readOnly
               />
               <div className={styles.formButtonContainer}>
                 <button type="submit" className={styles.formSubmitbutton}>

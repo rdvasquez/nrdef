@@ -114,7 +114,7 @@ input::placeholder {
 @media (min-width: 600px) and (max-width: 900px) {
   .header-container {
     grid-template-columns: 1fr; /* Single column layout */
-    padding: 15px;
+    /* padding: 15px; */
   }
 
   .header-logo {

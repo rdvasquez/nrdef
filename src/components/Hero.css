@@ -4,19 +4,17 @@
   width: 100%;
   max-width: 1300px;
   grid-template-columns: repeat(2, 1fr);
-  /* padding-bottom: 380px; */
   gap: 25px 5px;
   color: #8b4513;
-  /* border: 10px solid red; */
   margin: 0 auto;
   margin-left: 2%;
   margin-bottom: 2%;
+  /* padding-bottom: 380px; */
+  /* border: 10px solid red; */
 }
 
 .title {
   font-family: "Inter";
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr); */
   grid-column: 1 / 2;
   line-height: 50px;
   text-align: center;

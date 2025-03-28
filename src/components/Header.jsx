@@ -15,7 +15,6 @@ import IsAdmin from "./IsAdmin";
 export default async function Header() {
   const user = await currentUser();
   console.log(user);
-
   return (
     <header className="header-container">
       <div className="headerimage">

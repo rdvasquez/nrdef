@@ -11,7 +11,7 @@ export default function SelectDateTime({ eventDetails }) {
   return (
     <div>
       <div className="eventInfoContainer">
-        <label>Select date and time: </label>
+        <label>Select date and time</label>
         <select
           name="eventDetail"
           value={selectedValue}
@@ -33,7 +33,7 @@ export default function SelectDateTime({ eventDetails }) {
             );
           })}
         </select>
-        <label>Venue: </label>
+        <label>Venue </label>
         <input
           type="text"
           name="venue"

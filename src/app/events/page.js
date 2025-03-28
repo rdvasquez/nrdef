@@ -1,5 +1,5 @@
 import EventDisplay from "@/components/EventDisplay";
-// import "./page.module.css";
+import styles from "./eventpage.css";
 
 export default function EventPage() {
   return (

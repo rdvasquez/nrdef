@@ -44,9 +44,9 @@ export default function NewEvent() {
         <fieldset>
           <legend>New Event</legend>
           <div className="newEventForm">
-            <label htmlFor="title">Title:</label>
+            <label htmlFor="title">Title</label>
             <input type="text" id="title" name="title" required />
-            <label htmlFor="description">Description:</label>
+            <label htmlFor="description">Description</label>
             <input type="text" id="description" name="description" required />
           </div>
           <AdditionalTimings />

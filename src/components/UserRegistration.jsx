@@ -79,7 +79,7 @@ export default async function UserRegistrationForm() {
           <legend class="caption">User details</legend>
           <div className="userinfo">
             <label htmlFor="title">
-              <span>Title: </span>
+              <span>Title </span>
               <strong>
                 <span aria-label="required">*</span>
               </strong>

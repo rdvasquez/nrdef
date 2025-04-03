@@ -1,5 +1,6 @@
 .footer-container {
-  background: linear-gradient(to right, #89cff0, white);
+  /* background: linear-gradient(to right, #89cff0, white); */
+  background: linear-gradient(to right, #16b4ff, #a1e3f9, #e8f9ff);
   color: #3b3a30;
   padding: 10px;
   display: flex;

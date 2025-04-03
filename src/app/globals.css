@@ -11,7 +11,7 @@ body {
 input {
   padding: 0.8rem 0.3rem;
   border-radius: 5px;
-  background-color: #e5d9f2;
+  background-color: #dbdbdb;
 }
 
 input[type="radio"] {
@@ -164,7 +164,7 @@ input::placeholder {
     grid-column: 2; /* Keep it in the second column */
     font-size: 18px;
     margin-right: 1.5%;
-    padding-bottom: 150px;
+    padding-bottom: 50px;
     max-width: 100%; /* Ensure verse stays within the container */
   }
 
@@ -203,7 +203,7 @@ input::placeholder {
     grid-column: 2;
     font-size: 18px;
     margin-right: 1.5%;
-    padding-bottom: 150px;
+    padding-bottom: 50px;
     max-width: 100%; /* Ensure verse stays within the container */
   }
 

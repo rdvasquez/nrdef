@@ -1,11 +1,66 @@
-.contact-form {
-  background-color: blue;
-  border: 2px solid tomato;
+.contact-container {
   width: 500px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 0.8rem;
+}
+
+.title-words {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.contact-form {
+  width: 400px;
   height: 250px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.contact-input {
+  padding: 1rem;
+  margin: 3px 0;
+  width: 400px;
+  height: 30px;
+}
+
+textarea {
+  padding: 10px;
+  margin: 5px 0;
+  width: 400px;
+  height: 80px;
+  border-radius: 5px;
+  background-color: #dbdbdb;
+}
+
+textarea::placeholder {
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+}
+
+textarea:hover {
+  box-shadow: 3px 3px 5px rgb(197, 194, 194);
+}
+
+.contact-button {
+  width: 100px;
+  height: 30px;
+  padding: 3px 10px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  background-color: #ebeded;
+  font-weight: 550;
+  color: #3b3a30;
+  border: 2px solid #111517;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 5px;
 }

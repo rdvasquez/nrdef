@@ -5,7 +5,6 @@ export default function ContactPage() {
     <>
       <h1>This is Contact page</h1>
       <h2>Contact us here</h2>
-      <ContactForm />
     </>
   );
 }

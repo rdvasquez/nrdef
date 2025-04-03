@@ -1,6 +1,7 @@
 import Image from "next/image";
 import "./Hero.css";
 import Link from "next/link";
+import Contact from "./Contact";
 
 export default function heroSection() {
   return (
@@ -46,7 +47,9 @@ export default function heroSection() {
         height={300}
         alt="The Norwich Cathedral."
       />
-      <div className="GetInTouch"></div>
+      <div className="GetInTouch">
+        <Contact />
+      </div>
       <Image
         className="bible-study"
         src="/BibleStudy.png"

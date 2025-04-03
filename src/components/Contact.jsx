@@ -6,12 +6,15 @@ import { redirect } from "next/navigation";
 
 export default async function ContactForm() {
   return (
-    <>
-      <h2></h2>
-      <p></p>
-      <form>
-        <div className="contact-form">
+    <div className="contact-container">
+      <h4 className="title-words">Get in touch</h4>
+      <p className="title-words">
+        Join our network and explore your faith journey
+      </p>
+      <div className="contact-form">
+        <form>
           <input
+            className="contact-input"
             type="text"
             id="name"
             name="name"
@@ -19,6 +22,7 @@ export default async function ContactForm() {
             required
           />
           <input
+            className="contact-input"
             type="email"
             id="email"
             name="email"
@@ -31,9 +35,9 @@ export default async function ContactForm() {
             placeholder="Type your message here"
             required
           ></textarea>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </>
+          <button className="contact-button">Submit</button>
+        </form>
+      </div>
+    </div>
   );
 }

@@ -1,23 +1,29 @@
 .eventTitle {
-  color: #164cc1;
+  color: #007bff;
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
-  padding-top: 1.2rem;
+  margin: 1.2rem 0.8rem;
+  padding: 0.6rem;
 }
 
 .eventDisplayBox {
   display: flex;
   justify-content: space-around;
   gap: 10px;
-  max-width: 80%;
+  width: 80%;
+  max-width: 750px;
   margin: 0 auto;
+
   padding: 5px;
   text-align: start;
+  border: 1px solid #5a5858;
+  border-radius: 5px;
+  background-color: #e5d9f2;
 }
 .selectBox {
-  background-color: #e5d9f2;
-  font-family: "Times New Roman", Times, serif;
+  background-color: #dbdbdb;
+  font-family: "Inter", sans-serif;
   padding: 10px;
   width: 100%;
   border: 2px solid #5a5858;
@@ -31,14 +37,16 @@
 }
 
 .registrationForm {
-  /* background-color: #dbcbbd; */
+  background-color: #e5d9f2;
+  border: 2px solid #5a5858;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   gap: 10px;
   width: 80%;
   max-width: 750px;
-  margin: 0 auto;
+  margin: 0.8rem auto;
   padding: 1.5rem;
 }
 
@@ -49,7 +57,8 @@
 
 .formTitle {
   margin: 0 auto;
-  color: #164cc1;
+  margin-top: 1.5rem;
+  color: #007bff;
   font-size: 1.6rem;
   font-weight: bold;
 }

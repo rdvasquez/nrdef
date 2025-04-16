@@ -41,16 +41,20 @@ export default function NewEvent() {
   return (
     <div>
       <form action={AddEvent}>
-        <fieldset>
-          <legend>New Event</legend>
-          <div className="newEventForm">
-            <label htmlFor="title">Title</label>
-            <input type="text" id="title" name="title" required />
-            <label htmlFor="description">Description</label>
-            <input type="text" id="description" name="description" required />
-          </div>
-          <AdditionalTimings />
-        </fieldset>
+        <div className="NewEventContainer">
+          <fieldset>
+            <legend>New Event</legend>
+            <div className="newEventForm">
+              <label htmlFor="title">Event Title</label>
+              <input type="text" id="title" name="title" required />
+              <label htmlFor="description">Event Description</label>
+              <input type="text" id="description" name="description" required />
+              <div>
+                <AdditionalTimings className="DetailsBox" />
+              </div>
+            </div>
+          </fieldset>
+        </div>
         <button type="submit">Submit Event</button>
       </form>
     </div>

@@ -43,7 +43,9 @@ export default async function SingleEventPage({ params }) {
         <div>
           <form action={formSubmit}>
             <fieldset className={styles.formOutline}>
-              <legend className={styles.formTitle}>Event Registration</legend>
+              <legend className={styles.formTitle}>
+                Register for event here
+              </legend>
               <div className={styles.registrationForm}>
                 <label htmlFor="title">
                   <span>Title </span>

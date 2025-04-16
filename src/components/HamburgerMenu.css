@@ -1,0 +1,50 @@
+/* @media screen and (min-width: 640px) {
+  .hamburger {
+    display: none;
+  }
+    
+} */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border: rgb(56, 55, 55) 0.125rem solid;
+  border-radius: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #f3f4f6;
+  cursor: pointer;
+}
+.burger-top,
+.burger-middle,
+.burger-bottom {
+  display: block;
+  width: 1.5rem;
+  height: 0.125rem;
+  transition: all 0.3s ease-out;
+  background-color: #4b5563;
+  border-radius: 0.125rem;
+}
+.burger-middle {
+  margin-top: 0.125rem;
+  margin-bottom: 0.125rem;
+}
+.burger-top {
+  transform: translateY(-0.125rem);
+}
+.burger-bottom {
+  transform: translateY(0.125rem);
+}
+.top-close {
+  transform: rotate(45deg) translateX(0.13rem) translateY(0.35rem);
+  margin-left: 4px;
+}
+.middle-close {
+  opacity: 0;
+}
+.bottom-close {
+  transform: rotate(-45deg) translateY(-0.25rem);
+  margin-left: 4px;
+}

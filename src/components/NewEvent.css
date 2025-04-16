@@ -2,13 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  row-gap: 0.5rem;
+  justify-content: space-evenly;
+  margin: 20px auto;
+  gap: 0.5rem;
+  border: 2px solid #111517;
 }
 .DetailsBox {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 25px;
 }

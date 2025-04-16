@@ -1,21 +1,20 @@
 .userinfo {
-  /* background-color: #dbcbbd; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   gap: 10px;
-  max-width: 50%;
+  width: 80%;
+  max-width: 750px;
   margin: 0 auto;
   padding: 1rem;
 }
 
-input,
-select {
+/* select {
   padding: 0.8rem 0.3rem;
   border: solid 3px #6555de;
   border-radius: 5px;
   background-color: #e5d9f2;
-}
+} */
 
 input:hover,
 select:hover {
@@ -28,8 +27,10 @@ fieldset {
 }
 
 .caption {
+  /* border: solid 3px #6555de; */
   margin: 0 auto;
-  margin-top: 1rem;
+  padding: 0.8rem;
+  font-weight: 500;
 }
 
 .submit-button {
@@ -41,9 +42,10 @@ fieldset {
 
 .userdetails-button {
   height: 60px;
-  width: 250px;
+  width: 80%;
+  max-width: 750px;
   padding: 10px 20px;
-  background-color: #cdc1ff;
+  background-color: #a1e3f9;
   color: rgba(56, 55, 54, 0.708);
   font-family: "Times New Roman", Times, serif;
   font-size: x-large;

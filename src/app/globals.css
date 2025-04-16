@@ -8,10 +8,18 @@ body {
   background: white;
 }
 
-input {
+input,
+select {
   padding: 0.8rem 0.3rem;
   border-radius: 5px;
   background-color: #dbdbdb;
+  border: solid 2px rgb(118, 118, 118);
+  border-radius: 5px;
+  font-family: "Inter", sans-serif;
+}
+
+option {
+  background-color: #a9a3a3;
 }
 
 input[type="radio"] {
@@ -20,12 +28,14 @@ input[type="radio"] {
   margin-bottom: 1rem;
 }
 
-input:hover {
+input:not([type="radio"]):hover {
   box-shadow: 3px 3px 5px rgb(197, 194, 194);
 }
 
-input,
-select,
+input[type="radio"]:hover {
+  box-shadow: none;
+}
+
 input::placeholder {
   font-family: "Inter", sans-serif;
 }
@@ -70,44 +80,42 @@ input::placeholder {
 /* Media Queries for Different Screen Sizes */
 
 /* Mobile Devices (up to 600px) */
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .header-container {
     grid-template-columns: 1fr; /* Single column layout */
-    /* padding: 10px;
+/* padding: 10px;
   } */
-  }
 
-  .header-logo {
-    grid-template-columns: 1fr; /* Stack the logo */
-    justify-content: center; /* Center the logo */
-  }
+.header-logo {
+  grid-template-columns: 1fr; /* Stack the logo */
+  justify-content: center; /* Center the logo */
+}
 
-  .verse {
-    grid-column: 1; /* Ensure verse takes up full width */
-    font-size: 14px;
-    margin-right: 0;
-    padding-bottom: 50px; /* Reduce space at the bottom */
-    max-width: 100%; /* Ensure verse stays within the container */
-  }
+.verse {
+  grid-column: 1; /* Ensure verse takes up full width */
+  font-size: 14px;
+  margin-right: 0;
+  padding-bottom: 50px; /* Reduce space at the bottom */
+  max-width: 100%; /* Ensure verse stays within the container */
+}
 
-  .navbar {
-    grid-column: 1;
-    grid-template-columns: 1fr; /* Single column navigation */
-    padding-top: 20px;
-    text-align: center;
-    font-size: 16px;
-    max-width: 100%; /* Ensure navbar stays within container */
-  }
+.navbar {
+  grid-column: 1;
+  grid-template-columns: 1fr; /* Single column navigation */
+  padding-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  max-width: 100%; /* Ensure navbar stays within container */
+}
 
-  .navbar a {
-    padding: 10px;
-    font-size: 16px;
-  }
+.navbar a {
+  padding: 10px;
+  font-size: 16px;
+}
 
-  .signIn,
-  .joinUs {
-    font-size: 14px;
-  }
+.signIn,
+.joinUs {
+  font-size: 14px;
 }
 
 /* Tablets (600px to 900px) */
@@ -227,31 +235,3 @@ input::placeholder {
 }
 
 /* Small Screens - Phones (max-width: 600px) */
-@media (max-width: 600px) {
-  .footer-container {
-    grid-template-columns: 1fr; /* Stack items in one column */
-    text-align: center;
-    padding: 20px 5%; /* Adjust padding for smaller screens */
-    margin-top: 20%;
-  }
-
-  .footerverse {
-    grid-column: 1 / -1;
-    font-size: 14px; /* Adjust font size for small screens */
-  }
-
-  .leftside-footer,
-  .rightside-footer {
-    text-align: center;
-    grid-column: 1 / -1; /* Stack content in one column */
-    margin-bottom: 10px;
-  }
-
-  .policy {
-    justify-content: center; /* Center the policy links */
-  }
-
-  .policy a {
-    font-size: 14px; /* Adjust font size */
-  }
-}

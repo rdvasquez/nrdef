@@ -76,7 +76,7 @@ export default async function UserRegistrationForm() {
     <>
       <form action={handleSubmit}>
         <fieldset>
-          <legend class="caption">User details</legend>
+          <legend className="caption">User details</legend>
           <div className="userinfo">
             <label htmlFor="title">
               <span>Title </span>
@@ -123,7 +123,7 @@ export default async function UserRegistrationForm() {
         </fieldset>
 
         <fieldset>
-          <legend class="caption">Contact information</legend>
+          <legend className="caption">Contact information</legend>
           <div className="userinfo">
             <label htmlFor="addressline1">House/Apartment No.</label>
             <input

@@ -13,7 +13,7 @@ export default async function EventDisplayAdmin() {
     console.log(events);
     return (
       <div>
-        <div className="eventDisplayHeadingBox">
+        <div className="eventDisplayHeadingBoxAdmin">
           <h3>Event</h3>
           <h3>Description</h3>
           <h3>Action</h3>
@@ -22,7 +22,7 @@ export default async function EventDisplayAdmin() {
         {events.map((event) => {
           console.log(event);
           return (
-            <div className="eventDisplayBox" key={event.id}>
+            <div className="eventDisplayBoxAdmin" key={event.id}>
               <Link href={`/events/${event.id}-${event.title}`}>
                 {event.title}
               </Link>

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export default function AdditionalTimings() {
+export default function AdditionalTimings({ className }) {
   const [additionalTimings, setAdditionalTimings] = useState([{}]);
 
   const addAdditionalTiming = () => {
@@ -9,9 +9,9 @@ export default function AdditionalTimings() {
   };
 
   return (
-    <>
+    <div className={className}>
       {additionalTimings.map((_, index) => (
-        <div className="DetailsBox" key={index}>
+        <div key={index}>
           <label htmlFor={`date${index}`}>Date:</label>
           <input
             type="date"
@@ -44,8 +44,8 @@ export default function AdditionalTimings() {
         </div>
       ))}
       <button type="button" onClick={addAdditionalTiming}>
-        Add Additional Timing
+        Add Timing
       </button>
-    </>
+    </div>
   );
 }

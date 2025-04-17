@@ -1,58 +1,40 @@
 "use client";
 import React, { useState } from "react";
-import "./HamburgerMenu.css";
 import Link from "next/link";
+import "./HamburgerMenu.css";
 
-export default function NavbarBurger() {
+export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
-  //Handles the opening and closing of the menu
-  const toggleMenuHandleClick = () => {
-    setIsOpen(!isOpen);
-    console.log(isOpen);
-  };
+
+  const toggleMenu = () => setIsOpen((prev) => !prev);
+
   return (
-    <>
-      <button onClick={toggleMenuHandleClick} className="hamburger">
-        {isOpen ? (
-          <>
-            <span className="burger-top"></span>
-            <span className="burger-middle"></span>
-            <span className="burger-bottom"></span>
-            <nav className="navbar">
-              <Link href="/">Home</Link>
-            </nav>
-          </>
-        ) : (
-          <>
-            <span className="burger-top top-close "></span>
-            <span className="burger-middle middle-close"></span>
-            <span className="burger-bottom bottom-close"></span>
-          </>
-        )}
+    <div className="hamburger-wrapper">
+      <button className="hamburger-btn" onClick={toggleMenu}>
+        <div className={`bar ${isOpen ? "rotate-top" : ""}`}></div>
+        <div className={`bar ${isOpen ? "hide-middle" : ""}`}></div>
+        <div className={`bar ${isOpen ? "rotate-bottom" : ""}`}></div>
       </button>
-    </>
+
+      {isOpen && (
+        <nav className="mobile-menu">
+          <Link href="/" onClick={toggleMenu}>
+            Home
+          </Link>
+          <Link href="/about" onClick={toggleMenu}>
+            About
+          </Link>
+          <Link href="/resources" onClick={toggleMenu}>
+            Resources
+          </Link>
+          <Link href="/events" onClick={toggleMenu}>
+            Events
+          </Link>
+          <Link href="/contact" onClick={toggleMenu}>
+            Contact
+          </Link>
+        </nav>
+      )}
+    </div>
   );
 }
-
-//   <nav className={`navbar ${isOpen ? "open" : ""}`}>
-//     <ul>
-//       <li>
-//         <Link href="/">Home</Link>
-//       </li>
-//       <li>
-//         <Link href="/about">About</Link>
-//       </li>
-//       <li>
-//         <Link href="/resources">Resources</Link>
-//       </li>
-//       <li>
-//         <Link href="/events">Events</Link>
-//       </li>
-//       <li>
-//         <Link href="/contact">Contact</Link>
-//       </li>
-//     </ul>
-//     <div className="signIn">
-//       <Link href="/sign-in">Sign In</Link>
-//       </nav
-// }

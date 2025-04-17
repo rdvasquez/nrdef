@@ -11,21 +11,35 @@ export const metadata = {
     "A network of around 20 evangelical Anglican churches in Norfolk and the Waveney Valley",
   openGraph: {
     type: "website",
+    title: "Norwich Diocesan Evangelical Fellowship",
+    description: "Evangelical churches in Norfolk and the Waveney Valley",
+    url: "https://norwichdef.org",
+    siteName: "Norwich DEF",
+    images: [
+      {
+        url: "/logo.png",
+        width: 500,
+        height: 630,
+        alt: "Norwich DEF Logo",
+      },
+    ],
   },
 };
-const inter = Inter({
-  subsets: ["latin"],
-});
+
+const inter = Inter({ subsets: ["latin"] });
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        <ClerkProvider>
+    <ClerkProvider>
+      <html lang="en" className={inter.className}>
+        <body>
           <Header />
-          {children}
+          <main>
+            <div className="container">{children}</div>
+          </main>
           <Footer />
-        </ClerkProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

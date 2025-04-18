@@ -171,7 +171,7 @@ async function formSubmit(formData) {
     venue
   );
   revalidatePath("/events");
-  redirect("/");
+  redirect("/events/success");
 }
 //If the user is logged in, the event registration form to be populated with the user's details from the properties of CurrentUser() from Clerk. Otherwise, the user can register as a guest.
 

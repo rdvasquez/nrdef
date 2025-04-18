@@ -13,46 +13,29 @@ export default function NavbarBurger() {
   return (
     <>
       <button onClick={toggleMenuHandleClick} className="hamburger">
-        {isOpen ? (
-          <>
-            <span className="burger-top"></span>
-            <span className="burger-middle"></span>
-            <span className="burger-bottom"></span>
-            <nav className="navbar">
-              <Link href="/">Home</Link>
-            </nav>
-          </>
-        ) : (
-          <>
-            <span className="burger-top top-close "></span>
-            <span className="burger-middle middle-close"></span>
-            <span className="burger-bottom bottom-close"></span>
-          </>
-        )}
+        <span className={`burger-top ${isOpen ? "" : "top-close"}`}></span>
+        <span
+          className={`burger-middle ${isOpen ? "" : "middle-close"}`}
+        ></span>
+        <span
+          className={`burger-bottom ${isOpen ? "" : "bottom-close"}`}
+        ></span>
       </button>
+      {!isOpen && (
+        <nav className="navbarmenu">
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+          <Link href="/resources">Resources</Link>
+          <Link href="/events">Events</Link>
+          <Link href="/contact">Contact</Link>
+          <div className="signIn">
+            <Link href="/sign-in">Sign In</Link>
+          </div>
+        </nav>
+      )}
     </>
   );
 }
 
-//   <nav className={`navbar ${isOpen ? "open" : ""}`}>
-//     <ul>
-//       <li>
-//         <Link href="/">Home</Link>
-//       </li>
-//       <li>
-//         <Link href="/about">About</Link>
-//       </li>
-//       <li>
-//         <Link href="/resources">Resources</Link>
-//       </li>
-//       <li>
-//         <Link href="/events">Events</Link>
-//       </li>
-//       <li>
-//         <Link href="/contact">Contact</Link>
-//       </li>
-//     </ul>
-//     <div className="signIn">
-//       <Link href="/sign-in">Sign In</Link>
-//       </nav
-// }
+// This component is a hamburger menu that toggles the visibility of a navigation menu when clicked.
+// It uses React's useState hook to manage the open/close state of the menu.

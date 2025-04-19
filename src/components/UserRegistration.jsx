@@ -67,11 +67,11 @@ export default async function UserRegistrationForm() {
         creationDate,
       ]
     );
-    await sendConfirmationEmail(title, firstName, lastName, email);
+    sendConfirmationEmail(title, firstName, lastName, email);
     console.log("userdetailsRecord-->" + userdetailsRecord);
     revalidatePath("/users");
     //redirect to the user details page
-    redirect("/users");
+    redirect("/success");
   }
   return (
     <>
@@ -196,7 +196,7 @@ export default async function UserRegistrationForm() {
     </>
   );
 }
-async function sendConfirmationEmail(title, firstName, lastName, email) {
+function sendConfirmationEmail(title, firstName, lastName, email) {
   //Configure the nodemailer transport
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -224,7 +224,7 @@ async function sendConfirmationEmail(title, firstName, lastName, email) {
   };
 
   try {
-    await transporter.sendMail(mailOptions);
+    transporter.sendMail(mailOptions);
     console.log("Membership email sent successfully");
   } catch (error) {
     console.error("Error sending membership confirmation email:", error);

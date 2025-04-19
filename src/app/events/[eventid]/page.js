@@ -172,7 +172,7 @@ async function formSubmit(formData) {
       dietOption,
     ]
   );
-  await sendConfirmationEmail(
+  sendConfirmationEmail(
     title,
     firstName,
     lastName,
@@ -188,7 +188,7 @@ async function formSubmit(formData) {
 
 // Code to send an email to the user after successful registration
 
-async function sendConfirmationEmail(
+function sendConfirmationEmail(
   title,
   firstName,
   lastName,
@@ -231,7 +231,7 @@ async function sendConfirmationEmail(
   };
 
   try {
-    await transporter.sendMail(mailOptions);
+    transporter.sendMail(mailOptions);
     console.log("Confirmation email sent successfully");
   } catch (error) {
     console.error("Error sending confirmation email:", error);

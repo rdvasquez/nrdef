@@ -77,7 +77,12 @@ export default async function SingleEventPage({ params }) {
                   placeholder="Enter your first name"
                   required
                 />
-                <label htmlFor="lastname">Last Name</label>
+                <label htmlFor="lastname">
+                  <span>Last Name </span>
+                  <strong>
+                    <span aria-label="required">*</span>
+                  </strong>
+                </label>
                 <input
                   type="text"
                   name="lastname"
@@ -85,7 +90,12 @@ export default async function SingleEventPage({ params }) {
                   placeholder="Enter your last name"
                   required
                 />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">
+                  <span>Email </span>
+                  <strong>
+                    <span aria-label="required">*</span>
+                  </strong>
+                </label>
                 <input
                   type="email"
                   name="email"
@@ -137,6 +147,7 @@ export default async function SingleEventPage({ params }) {
 async function formSubmit(formData) {
   "use server";
   console.log(formData);
+
   const title = formData.get("title");
   const firstName = formData.get("firstname");
   const lastName = formData.get("lastname");

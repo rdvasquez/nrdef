@@ -1,50 +1,70 @@
-/* @media screen and (min-width: 640px) {
-  .hamburger {
-    display: none;
-  }
-    
-} */
-.hamburger {
+.hamburger-wrapper {
+  display: none;
+  position: relative;
+}
+
+/* Hamburger Button */
+.hamburger-btn {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  border: rgb(56, 55, 55) 0.125rem solid;
-  border-radius: 1.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  background-color: #f3f4f6;
+  gap: 5px;
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 0.5rem;
+  z-index: 2000;
 }
-.burger-top,
-.burger-middle,
-.burger-bottom {
-  display: block;
-  width: 1.5rem;
-  height: 0.125rem;
-  transition: all 0.3s ease-out;
-  background-color: #4b5563;
-  border-radius: 0.125rem;
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: 0.3s ease;
 }
-.burger-middle {
-  margin-top: 0.125rem;
-  margin-bottom: 0.125rem;
+
+/* Animations when open */
+.rotate-top {
+  transform: rotate(45deg) translate(5px, 6px);
 }
-.burger-top {
-  transform: translateY(-0.125rem);
-}
-.burger-bottom {
-  transform: translateY(0.125rem);
-}
-.top-close {
-  transform: rotate(45deg) translateX(0.13rem) translateY(0.35rem);
-  margin-left: 4px;
-}
-.middle-close {
+
+.hide-middle {
   opacity: 0;
 }
-.bottom-close {
-  transform: rotate(-45deg) translateY(-0.25rem);
-  margin-left: 4px;
+
+.rotate-bottom {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: -35px;
+  right: 0;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu a {
+  padding: 0.75rem 0;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.mobile-menu a:hover {
+  color: #8b4513;
+}
+
+/* Show hamburger only on small screens */
+@media (max-width: 768px) {
+  .hamburger-wrapper {
+    display: block;
+  }
 }

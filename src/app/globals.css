@@ -76,7 +76,7 @@ input::placeholder {
 .description {
   max-width: 800px;
 }
-
+/* 
 /* Media Queries for Different Screen Sizes */
 
 /* Mobile Devices (up to 600px) */
@@ -91,7 +91,7 @@ input::placeholder {
   justify-content: center; /* Center the logo */
 }
 
-.verse {
+.header-verse {
   grid-column: 1; /* Ensure verse takes up full width */
   font-size: 14px;
   margin-right: 0;
@@ -121,7 +121,7 @@ input::placeholder {
 /* Tablets (600px to 900px) */
 @media (min-width: 600px) and (max-width: 900px) {
   .header-container {
-    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-columns: repeat(2, 1fr); /* Single column layout */
     /* padding: 15px; */
   }
 
@@ -130,7 +130,7 @@ input::placeholder {
     justify-content: center;
   }
 
-  .verse {
+  .header-verse {
     grid-column: 1; /* Ensure verse takes up full width */
     font-size: 16px;
     margin-right: 0;
@@ -160,15 +160,14 @@ input::placeholder {
 /* Desktops (900px to 1300px) */
 @media (min-width: 900px) and (max-width: 1300px) {
   .header-container {
-    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
-    /* padding: 30px; */
+    grid-template-columns: 1fr;
   }
 
   .header-logo {
     grid-template-columns: 1fr; /* Stack the logo */
   }
 
-  .verse {
+  .header-verse {
     grid-column: 2; /* Keep it in the second column */
     font-size: 18px;
     margin-right: 1.5%;
@@ -198,8 +197,8 @@ input::placeholder {
 /* Larger Desktops (1300px and above) */
 @media (min-width: 1300px) {
   .header-container {
-    grid-template-columns: repeat(3, 1fr); /* Three columns layout */
-    padding: 3%;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5px;
   }
 
   .header-logo {
@@ -234,4 +233,11 @@ input::placeholder {
   }
 }
 
-/* Small Screens - Phones (max-width: 600px) */
+@media (max-width: 600px) {
+  .hero-container {
+    grid-template-columns: 1fr; /* Stack items in one column */
+    text-align: center;
+    padding: 20px;
+    margin-top: 10%;
+  }
+}

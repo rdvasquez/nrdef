@@ -10,83 +10,136 @@
 .header-container {
   font-family: "Inter" sans-serif;
   position: relative;
+  padding-bottom: 1rem;
   width: 100%;
-  height: auto; /* Allow dynamic height based on content */
+  height: 65vh;
+  overflow: hidden;
 }
 
 /* Header Image (background) */
 .headerimage {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 75vh; /* Adjust the height as needed */
-  object-fit: cover; /* Make sure the image covers the area without stretching */
+  height: 70vh;
+  object-fit: cover;
+  z-index: -1;
 }
 
 /* Logo and Text */
 .header-logo {
   position: absolute;
-  top: 20px;
-  left: 10px;
   display: flex;
   flex-direction: column;
-  padding: 5px;
+  padding: 10px;
+  z-index: 3;
 }
 
-.logo {
-  max-width: 200px;
-  height: auto;
-}
-
-.verse {
-  margin-top: 40px;
+.header-verse {
+  position: absolute;
+  bottom: 80px;
+  right: 80px;
   max-width: 600px;
-  font-family: "Inter", sans-serif; /* Apply Inter font */
+  font-family: serif;
   font-style: italic;
-  font-size: 1.2rem;
-  font-weight: 400; /* Adjust weight if needed */
+  font-size: 1.1rem;
+  font-weight: 600;
   text-align: center;
-  color: #3b3a30; /* Adjust color if necessary */
+  padding: 1rem;
+  color: #3b3a30;
+  z-index: 2;
 }
 
 /* Navigation Bar */
 .navbar {
   position: absolute;
-  font-size: 18px;
+  font-size: 16px;
   top: 20px;
   right: 5%;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
   gap: 5px;
-  z-index: 10;
+  z-index: 2;
 }
 
 .navbar a {
   color: #3b3a30;
-  font-weight: bold;
   text-decoration: none;
-  padding: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.hamburger-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none; /* hide full navbar */
+  }
+
+  .hamburger-only {
+    display: block; /* show hamburger menu */
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
 /* Sign-In/Sign-Out */
 .signIn {
   display: flex;
+  align-items: center;
   gap: 5px;
 }
 
-.joinUs {
-  background-color: #7bd4ff;
-  color: #3b3a30;
-  padding: 10px;
-  border: 2px solid #3b3a30;
-  border-radius: 5px;
+/* General button reset */
+.signIn button {
+  all: unset;
   cursor: pointer;
+  font-weight: 500;
+  padding: 3px;
+  border-radius: 5px;
+  background-color: #7bd4ff;
+  color: #121211;
+  transition: all 0.25s ease-in-out;
+  border: 1px solid transparent;
+}
+
+.signIn button:hover {
+  background-color: #5cc5f2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional for consistency */
+.signIn a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Custom style for the "Join Us" button */
+.joinUs {
+  background-color: #8b4513;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .joinUs:hover {
-  background-color: #9eadb5;
+  background-color: transparent;
+  color: #3b3a30;
+  border: 1px #3b3a30;
 }

@@ -11,11 +11,21 @@ export const metadata = {
     "A network of around 20 evangelical Anglican churches in Norfolk and the Waveney Valley",
   openGraph: {
     type: "website",
+    url: "https://norwichdef.org",
+    siteName: "Norwich DEF",
+    images: [
+      {
+        url: "/logo.png",
+        width: 300,
+        height: 300,
+        alt: "Norwich DEF Logo",
+      },
+    ],
   },
 };
-const inter = Inter({
-  subsets: ["latin"],
-});
+
+const inter = Inter({ subsets: ["latin"] });
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

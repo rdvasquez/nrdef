@@ -25,7 +25,7 @@ export default function heroSection() {
       <Image
         className="image-overlay"
         src="/feet.png"
-        width={550}
+        width={580}
         height={300}
         alt="The Great Commission."
       />

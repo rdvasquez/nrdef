@@ -28,9 +28,10 @@ export default async function ContactForm() {
   return (
     <div className="contact-container">
       <h4 className="title-words">Get in touch</h4>
-      <p className="title-words">
+      <p className="invite-text">
         Join our network and explore your faith journey
       </p>
+
       <div className="contact-form">
         <form action={handleSubmit}>
           <input

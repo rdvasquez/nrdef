@@ -1,8 +1,8 @@
 import { pool } from "@/lib/db";
 import "./Contact.css";
-import { currentUser } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import nodemailer from "nodemailer";
 
 export default async function ContactForm() {
   async function handleSubmit(formData) {
@@ -24,11 +24,7 @@ export default async function ContactForm() {
     revalidatePath("/");
     redirect("/");
   }
-  async function notifyAdminEmail(guestName, email, message) {
-    // Code to send an email to the admin about the new user
-    console.log("New message from guest:", guestName, email, message);
-  }
-  // Function to send an email to the user after successful registration
+
   return (
     <div className="contact-container">
       <h4 className="title-words">Get in touch</h4>
@@ -64,4 +60,49 @@ export default async function ContactForm() {
       </div>
     </div>
   );
+}
+// Code to send an email to the admin about the new user message
+// This function will be called after the form submission
+
+async function notifyAdminEmail(guestName, email, message) {
+  console.log("New message from guest:", guestName, email);
+
+  //Import nodemailer
+  //Configure the nodemailer transport
+
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    secure: process.env.SMTP_SECURE === "true",
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
+  // Set up the email options
+
+  let mailOptions = {
+    from: process.env.SMTP_USER,
+    to: process.env.SMTP_USER,
+    subject: `New Message from ${guestName}`,
+    html: `
+      <p>Dear Admin,</p>
+      <p>You have received a new message from a guest:</p>
+      <ul>
+        <li><strong>Name:</strong> ${guestName}</li>
+        <li><strong>Email:</strong> ${email}</li>
+        <li><strong>Message:</strong>${message}</li>
+        </ul>
+        <p><strong>This message needs your kind attention and response.</strong></p>
+      <p>Thanks</p>
+      
+    `,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    console.log("Notification email sent to admin successfully");
+  } catch (error) {
+    console.error("Error sending notification email:", error);
+  }
 }

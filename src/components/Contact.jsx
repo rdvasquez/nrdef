@@ -19,7 +19,7 @@ export default async function ContactForm() {
     );
     console.log("newUser------>" + newGuest);
     //Notify admin about the new user
-    await notifyAdminEmail(guestName, email, message);
+    notifyAdminEmail(guestName, email, message);
     //Redirect to home page after submission
     revalidatePath("/");
     redirect("/");
@@ -64,7 +64,7 @@ export default async function ContactForm() {
 // Code to send an email to the admin about the new user message
 // This function will be called after the form submission
 
-async function notifyAdminEmail(guestName, email, message) {
+function notifyAdminEmail(guestName, email, message) {
   console.log("New message from guest:", guestName, email);
 
   //Import nodemailer
@@ -100,7 +100,7 @@ async function notifyAdminEmail(guestName, email, message) {
   };
 
   try {
-    await transporter.sendMail(mailOptions);
+    transporter.sendMail(mailOptions);
     console.log("Notification email sent to admin successfully");
   } catch (error) {
     console.error("Error sending notification email:", error);

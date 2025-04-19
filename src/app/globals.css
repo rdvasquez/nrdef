@@ -91,7 +91,7 @@ input::placeholder {
   justify-content: center; /* Center the logo */
 }
 
-.verse {
+.header-verse {
   grid-column: 1; /* Ensure verse takes up full width */
   font-size: 14px;
   margin-right: 0;
@@ -121,7 +121,7 @@ input::placeholder {
 /* Tablets (600px to 900px) */
 @media (min-width: 600px) and (max-width: 900px) {
   .header-container {
-    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-columns: repeat(2, 1fr); /* Single column layout */
     /* padding: 15px; */
   }
 
@@ -130,7 +130,7 @@ input::placeholder {
     justify-content: center;
   }
 
-  .verse {
+  .header-verse {
     grid-column: 1; /* Ensure verse takes up full width */
     font-size: 16px;
     margin-right: 0;

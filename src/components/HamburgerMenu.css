@@ -24,7 +24,7 @@
 
 /* Animations when open */
 .rotate-top {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(5px, 6px);
 }
 
 .hide-middle {
@@ -32,21 +32,21 @@
 }
 
 .rotate-bottom {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(5px, -6px);
 }
 
 /* Mobile menu styles */
 .mobile-menu {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: -35px;
   right: 0;
   background-color: #f9f9f9;
   border-top: 1px solid #ddd;
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 1rem 0;
+  padding: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 

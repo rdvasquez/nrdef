@@ -57,8 +57,6 @@ export default async function Header() {
             <SignedIn>
               <IsAdmin></IsAdmin>
             </SignedIn>
-          </div>
-          <div className="signIn">
             <SignedIn>
               <span>
                 Welcome {user?.firstName} {user?.lastName}

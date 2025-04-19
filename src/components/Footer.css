@@ -1,54 +1,83 @@
 .footer-container {
-  /* background: linear-gradient(to right, #89cff0, white); */
-  background: linear-gradient(to right, #16b4ff, #a1e3f9, #e8f9ff);
-  color: #3b3a30;
-  padding: 10px;
-  display: flex;
-  justify-content: flex-end;
-  text-align: center;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  max-width: 1300px;
+  position: relative;
   width: 100%;
-  flex-wrap: wrap;
+  height: auto;
+  min-height: 60vh;
+  padding: 4rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  color: #333;
+  background-image: url("/bible.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
-.leftside-footer {
+/* Optional overlay for better contrast */
+.footer-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(300, 300, 300, 0.7);
+  z-index: 0;
+}
+
+/* Content wrapper */
+.footer-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Top section: logo & verse */
+.footer-top {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 7px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 250px;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
 }
 
 .footerverse {
-  font-family: sans;
-  align-items: end;
-  padding-left: auto;
-  font-size: 16px;
   font-style: italic;
-  font-weight: bold;
-  max-width: 800px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  max-width: 500px;
+  text-align: right;
+  color: #3b3a30;
+  align-self: flex-end;
+  margin-top: 1rem;
+  font-family: Georgia, serif;
 }
 
-.bible-reference {
-  font-weight: bold;
-}
-
+/* Bottom section: links & text */
 .rightside-footer {
+  display: flex;
   flex-direction: column;
   align-items: flex-end;
-  text-align: right;
+  margin-top: auto;
+  gap: 0.5rem;
 }
 
 .footer-links {
   display: flex;
-  font-weight: bold;
-  gap: 15px;
-  margin-bottom: 5px;
+  gap: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .footer-links a {
@@ -58,10 +87,40 @@
 }
 
 .footer-links a:hover {
-  color: #ccc;
+  color: #555;
 }
 
 .footer-text {
-  font-size: 14px;
-  margin-bottom: 10px;
+  font-size: 0.85rem;
+  color: #444;
+  text-align: right;
+  max-width: 300px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-logo,
+  .footerverse {
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .rightside-footer {
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }

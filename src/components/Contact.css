@@ -23,12 +23,10 @@
   line-height: 1.4;
 }
 
-/* Form Layout */
 .contact-form {
   display: flex;
   flex-direction: column;
-}
-
+  
 /* Inputs & Textarea */
 .contact-input,
 textarea {

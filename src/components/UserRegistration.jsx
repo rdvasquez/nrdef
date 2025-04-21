@@ -4,6 +4,7 @@ import { currentUser } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { SignIn } from "@clerk/nextjs";
+import nodemailer from "nodemailer";
 
 export default async function UserRegistrationForm() {
   const currUser = await currentUser();
@@ -44,7 +45,6 @@ export default async function UserRegistrationForm() {
     const email = formData.get("email");
     const phoneNumber = formData.get("phonenumber");
     console.log("phoneNumber-->" + phoneNumber);
-    // const password = formData.get("password");
     const addressline1 = formData.get("addressline1");
     const addressline2 = formData.get("addressline2");
     const postCode = formData.get("postcode");
@@ -67,16 +67,18 @@ export default async function UserRegistrationForm() {
         creationDate,
       ]
     );
+    sendConfirmationEmail(title, firstName, lastName, email);
     console.log("userdetailsRecord-->" + userdetailsRecord);
     revalidatePath("/users");
     //redirect to the user details page
-    redirect("/users");
+    redirect("/success");
   }
   return (
     <>
+      <h1>Welcome to our community</h1>
       <form action={handleSubmit}>
         <fieldset>
-          <legend className="caption">User details</legend>
+          <legend className="caption">Please fill the form to join us</legend>
           <div className="userinfo">
             <label htmlFor="title">
               <span>Title </span>
@@ -103,7 +105,12 @@ export default async function UserRegistrationForm() {
               placeholder="Enter your first Name"
               required
             />
-            <label htmlFor="lastname">Last Name</label>
+            <label htmlFor="lastname">
+              <span>Last Name </span>
+              <strong>
+                <span aria-label="required">*</span>
+              </strong>
+            </label>
             <input
               type="text"
               name="lastname"
@@ -111,7 +118,12 @@ export default async function UserRegistrationForm() {
               placeholder="Enter your last name"
               required
             />
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">
+              <span>Email </span>
+              <strong>
+                <span aria-label="required">*</span>
+              </strong>
+            </label>
             <input
               type="email"
               name="email"
@@ -163,7 +175,7 @@ export default async function UserRegistrationForm() {
               name="postcode"
               id="postcode"
               pattern="[A-Za-z]{1,2}[0-9Rr]{1,2} ?[0-9][A-Za-z]{2}"
-              placeholder="Enter Post Code"
+              placeholder="Enter Post Code AA1 1AA"
               required
             />
             <label htmlFor="phonenumber">Phone number</label>
@@ -183,4 +195,38 @@ export default async function UserRegistrationForm() {
       </form>
     </>
   );
+}
+function sendConfirmationEmail(title, firstName, lastName, email) {
+  //Configure the nodemailer transport
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    secure: process.env.SMTP_SECURE === "true",
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
+
+  // Set up the email options
+
+  let mailOptions = {
+    from: process.env.SMTP_USER,
+    to: email,
+    subject: "Welcome to NRDEF organisation",
+    html: `
+      
+      <p>Dear ${title} ${firstName} ${lastName},</p>
+      <p>Thank you for joining us. We are delighted to have you as a member of our community. Your participation is valuable to us.</p>
+      <p>Best regards,</p>
+      <p>NRDEF Community Head</p>
+    `,
+  };
+
+  try {
+    transporter.sendMail(mailOptions);
+    console.log("Membership email sent successfully");
+  } catch (error) {
+    console.error("Error sending membership confirmation email:", error);
+  }
 }

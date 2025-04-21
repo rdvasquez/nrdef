@@ -36,8 +36,9 @@ export default function Footer() {
         <div className="footer-text">
           © {new Date().getFullYear()} Norwich Diocesan Evangelical Fellowship.
           All rights reserved.
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }

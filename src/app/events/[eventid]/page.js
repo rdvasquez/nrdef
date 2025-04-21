@@ -77,7 +77,12 @@ export default async function SingleEventPage({ params }) {
                   placeholder="Enter your first name"
                   required
                 />
-                <label htmlFor="lastname">Last Name</label>
+                <label htmlFor="lastname">
+                  <span>Last Name </span>
+                  <strong>
+                    <span aria-label="required">*</span>
+                  </strong>
+                </label>
                 <input
                   type="text"
                   name="lastname"
@@ -85,7 +90,12 @@ export default async function SingleEventPage({ params }) {
                   placeholder="Enter your last name"
                   required
                 />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">
+                  <span>Email </span>
+                  <strong>
+                    <span aria-label="required">*</span>
+                  </strong>
+                </label>
                 <input
                   type="email"
                   name="email"
@@ -137,6 +147,7 @@ export default async function SingleEventPage({ params }) {
 async function formSubmit(formData) {
   "use server";
   console.log(formData);
+
   const title = formData.get("title");
   const firstName = formData.get("firstname");
   const lastName = formData.get("lastname");
@@ -161,7 +172,7 @@ async function formSubmit(formData) {
       dietOption,
     ]
   );
-  await sendConfirmationEmail(
+  sendConfirmationEmail(
     title,
     firstName,
     lastName,
@@ -171,13 +182,13 @@ async function formSubmit(formData) {
     venue
   );
   revalidatePath("/events");
-  redirect("/");
+  redirect("/events/success");
 }
 //If the user is logged in, the event registration form to be populated with the user's details from the properties of CurrentUser() from Clerk. Otherwise, the user can register as a guest.
 
 // Code to send an email to the user after successful registration
 
-async function sendConfirmationEmail(
+function sendConfirmationEmail(
   title,
   firstName,
   lastName,
@@ -220,7 +231,7 @@ async function sendConfirmationEmail(
   };
 
   try {
-    await transporter.sendMail(mailOptions);
+    transporter.sendMail(mailOptions);
     console.log("Confirmation email sent successfully");
   } catch (error) {
     console.error("Error sending confirmation email:", error);

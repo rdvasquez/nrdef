@@ -132,10 +132,10 @@
   .footerverse {
     text-align: left;
     margin-left: 2rem;
-  text-align: right;
-  max-width: 300px;
+    text-align: right;
+    max-width: 300px;
+  }
 }
-
 /* Responsive tweaks */
 @media (max-width: 768px) {
   .footer-top {

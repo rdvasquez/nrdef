@@ -11,7 +11,7 @@ import {
 } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import IsAdmin from "./IsAdmin";
-import NavBarBurger from "./HamburgerMenu.jsx";
+import HamburgerMenu from "./HamburgerMenu";
 
 export default async function Header() {
   const user = await currentUser();
@@ -36,10 +36,15 @@ export default async function Header() {
             height={200}
             alt="logo"
           />
-          <span className="verse">
-            “How beautiful are the feet of those who bring good news.” Romans
-            10:15
-          </span>
+        </div>
+
+        <div className="header-verse">
+          “How beautiful are the feet of those who bring good news.” <br />
+          Romans 10:15 <br />
+        </div>
+
+        <div className="hamburger-only">
+          <HamburgerMenu />
         </div>
 
         <nav className="navbar">
@@ -52,8 +57,6 @@ export default async function Header() {
             <SignedIn>
               <IsAdmin></IsAdmin>
             </SignedIn>
-          </div>
-          <div className="signIn">
             <SignedIn>
               <span>
                 Welcome {user?.firstName} {user?.lastName}

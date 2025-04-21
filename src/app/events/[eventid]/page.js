@@ -188,7 +188,7 @@ async function formSubmit(formData) {
 
 // Code to send an email to the user after successful registration
 
-function sendConfirmationEmail(
+async function sendConfirmationEmail(
   title,
   firstName,
   lastName,

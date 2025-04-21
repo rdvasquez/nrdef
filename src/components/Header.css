@@ -27,13 +27,15 @@
   z-index: -1;
 }
 
-/* Logo and Text */
+/* Logo Wrapper */
 .header-logo {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
+  top: 1rem;
+  left: 1.5rem;
   z-index: 3;
+  width: 15vw;
+  max-width: 180px;
+  min-width: 100px;
 }
 
 .header-verse {
@@ -107,10 +109,6 @@
   all: unset;
   cursor: pointer;
   font-weight: 500;
-  padding: 3px;
-  border-radius: 5px;
-  background-color: #7bd4ff;
-  color: #121211;
   transition: all 0.25s ease-in-out;
   border: 1px solid transparent;
 }

@@ -29,11 +29,14 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={inter.className}>
         <ClerkProvider>
-          <Header />
-          {children}
-          <Footer />
+          {/* Page Wrapper for full-height layout */}
+          <div className="page-wrapper">
+            <Header />
+            <main className="page-content">{children}</main>
+            <Footer />
+          </div>
         </ClerkProvider>
       </body>
     </html>

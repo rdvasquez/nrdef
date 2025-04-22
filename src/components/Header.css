@@ -8,51 +8,37 @@
 
 /* Header Container */
 .header-container {
-  padding: 2rem 1rem;
-  min-height: 400px;
   position: relative;
+  min-height: 400px;
   display: flex;
-  flex-direction: column;
-  gap: 3rem;
+  justify-content: flex-start;
+  padding: 2rem 1rem;
   background-image: url("/bible.webp");
   background-size: cover;
   background-position: center; /* shift cross into view */
-  overflow: hidden;
   color: #333;
-}
-
-/* Optional overlay for better contrast */
-.header-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(250, 255, 255, 0.3);
-  z-index: 0;
-}
-
-.header-container > * {
-  position: relative;
-  z-index: 1;
-  max-width: 100%;
+  overflow: hidden;
 }
 
 /* Header Image (background) */
-.headerimage {
+.header-bg {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
+  z-index: 0;
+}
+
+.header-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
 }
 
 /* LOGO - keep top-left and away from central image */
 .header-logo {
   position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-  max-width: 200px;
+  top: clamp(3.5rem, 8vw, 6rem); /* Pushes logo lower */
+  left: clamp(1.5rem, 10vw, 6rem); /* Pushes logo farther left */
+  max-width: clamp(90px, 18vw, 160px); /* Adjusts width responsively */
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -63,11 +49,23 @@
 .header-logo .logo {
   width: 100%;
   height: auto;
-  display: block;
   object-fit: contain;
-  filter: drop-shadow(
-    0 2px 3px rgba(0, 0, 0, 0.3)
-  ); /* optional for better visibility */
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+}
+
+/* Optional overlay for better contrast */
+.header-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(250, 255, 255, 0.4);
+  z-index: 1;
+}
+
+.header-container > * {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
 }
 
 /* Header Verse + Navbar Wrapper */
@@ -78,10 +76,9 @@
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: center;
   padding: 1rem;
-  z-index: 2;
+  z-index: 1;
 }
 
 .header-verse {
@@ -91,6 +88,7 @@
   font-weight: 600;
   color: #3b3a30;
   padding: 1rem;
+  max-width: 300px;
   word-break: break-word;
 }
 
@@ -185,6 +183,33 @@
   border: 1px #3b3a30;
 }
 
+/* Small Mobile: avoid cross overlap by moving down/left & shrinking */
+@media (max-width: 500px) and (max-height: 700px) {
+  .header-logo {
+    top: 4.5rem; /* move logo lower */
+    left: 1rem; /* hug the left side */
+    max-width: 100px;
+  }
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 768px) {
+  .header-logo {
+    top: 2.5rem;
+    left: 1.2rem;
+    max-width: 120px;
+  }
+}
+
+/* Tablet and up */
+@media (min-width: 769px) {
+  .header-logo {
+    top: 1rem;
+    left: 2rem;
+    max-width: 180px;
+  }
+}
+
 /* Media Responsive Design */
 @media (max-width: 768px) {
   .header-lower {
@@ -206,31 +231,6 @@
     position: absolute;
     top: 1rem;
     z-index: 4;
-  }
-}
-
-/* Mobile Breakpoint */
-@media (max-width: 768px) {
-  .header-logo {
-    top: 0.5rem;
-    left: 0.5rem;
-    width: 25vw;
-  }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-  .header-logo {
-    top: 0.4rem;
-    left: 0.4rem;
-    width: 35vw;
-  }
-}
-
-/* Tablet Breakpoint */
-@media (max-width: 1024px) {
-  .header-logo {
-    max-width: 200px;
   }
 }
 

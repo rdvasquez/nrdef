@@ -35,7 +35,7 @@ export default function heroSection() {
           height={300}
           alt="The Great Commission."
         />
-        <article className="text-overlay">
+        <div className="text-overlay">
           <h2 className="content1">
             Furthering the Great Commission through faith and fellowship
           </h2>
@@ -46,7 +46,7 @@ export default function heroSection() {
             love and compassion, living out the call to be salt and light in the
             world.
           </p>
-        </article>
+        </div>
       </div>
 
       <Image

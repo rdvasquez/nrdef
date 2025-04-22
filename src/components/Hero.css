@@ -58,45 +58,55 @@
   z-index: 10;
   text-align: center;
 }
-
 .greatcom-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
+  max-width: 550px;
+  height: auto;
   grid-column: 1 / 2;
   grid-row: 3 / 4;
-  max-width: 100%;
-  height: auto;
-}
-
-.greatcom-img {
-  display: block;
-  max-width: 550px;
-  height: 300px;
-  margin-left: 0.6rem;
   border-radius: 10px;
-  object-fit: cover;
-  position: relative;
-}
-
-.text-overlay {
-  position: absolute;
-  top: 58%;
-  transform: translateY(-60%);
-  color: #3b3a30;
-  text-align: left;
-  width: 80%;
-  z-index: 10;
-  margin-top: 0.3rem;
-  left: 3.2rem;
-  max-width: 550px;
   overflow: hidden;
 }
 
+/* Make the image fully responsive inside */
+.greatcom-img {
+  max-width: 550px;
+  height: 300px;
+  justify-self: start;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Overlay with flex to center text better */
+.text-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1.5rem;
+  color: #3b3a30;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Typography tweaks */
 .content1 {
-  font-size: 1.7rem;
+  font-size: clamp(1.4rem, 1.5vw + 0.5rem, 1.7rem);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .content2 {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1vw + 0.3rem, 1.2rem);
+  line-height: 1.4;
 }
 
 .cathedral-img {
@@ -116,6 +126,7 @@
   background-color: #ffffff;
   grid-column: 1 / 2;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .bible-study {
@@ -125,6 +136,7 @@
   height: 300px;
   justify-self: start;
   object-fit: cover;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
@@ -166,17 +178,14 @@
   }
 
   .text-overlay {
-    position: absolute;
-    top: 58%;
-    transform: translateY(-60%);
-    color: #3b3a30;
-    text-align: left;
-    width: 80%;
-    z-index: 10;
-    margin-top: 0.3rem;
-    left: 4.5rem;
-    max-width: 650px;
-    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .greatcom-container {
+    max-width: 100%;
+    margin: 0 auto;
   }
 
   .content1 {
@@ -185,5 +194,41 @@
 
   .content2 {
     font-size: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1044px) {
+  .hero-container {
+    grid-template-columns: 1fr; /* Stack layout vertically */
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+
+  .title,
+  .text,
+  .faith-banner,
+  .greatcom-img,
+  .bible-study,
+  .cathedral-img,
+  .GetInTouch {
+    grid-column: 1 / -1;
+    max-width: 100%;
+    justify-self: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .text-overlay {
+    left: 2rem;
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  .content1 {
+    font-size: 1.5rem;
+  }
+
+  .content2 {
+    font-size: 1.1rem;
   }
 }

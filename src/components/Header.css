@@ -55,6 +55,7 @@
   align-items: flex-end;
   gap: 1rem;
   z-index: 2;
+
 }
 
 .header-verse {
@@ -102,6 +103,26 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none; /* hide full navbar */
+  }
+
+  .hamburger-only {
+    display: block; /* show hamburger menu */
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+/* Sign-In/Sign-Out */
+.signIn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 /* General button reset */

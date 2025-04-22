@@ -46,12 +46,13 @@ fieldset {
   max-width: 750px;
   padding: 10px 20px;
   background-color: #a1e3f9;
-  color: rgba(56, 55, 54, 0.708);
+  color: rgba(0, 0, 10, 0.708);
   font-family: "Times New Roman", Times, serif;
   font-size: x-large;
   font-weight: 800;
   border: solid 3px #6555de;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .userdetails-button:hover {

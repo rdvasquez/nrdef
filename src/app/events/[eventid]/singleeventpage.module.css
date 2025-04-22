@@ -14,7 +14,6 @@
   width: 80%;
   max-width: 750px;
   margin: 0 auto;
-
   padding: 5px;
   text-align: start;
   border: 1px solid #5a5858;
@@ -37,9 +36,9 @@
 }
 
 .registrationForm {
-  background-color: #e5d9f2;
+  /* background-color: #e5d9f2;
   border: 2px solid #5a5858;
-  border-radius: 10px;
+  border-radius: 10px; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -72,17 +71,18 @@
 
 .formSubmitbutton {
   height: 60px;
-  width: 75%;
+  width: 80%;
   max-width: 750px;
   padding: 10px 20px;
-  background-color: #cdc1ff;
+  background-color: #a1e3f9;
   color: rgba(0, 0, 10, 0.708);
   font-family: "Times New Roman", Times, serif;
   font-size: x-large;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   border: solid 3px#6555de;
   border-radius: 5px;
+  cursor: pointer;
 }
 .formSubmitbutton:hover {
   background-color: #a5a5a9;

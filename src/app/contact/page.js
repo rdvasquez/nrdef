@@ -1,14 +1,9 @@
 import ContactForm from "@/components/Contact";
-import NavBarBurger from "@/components/HamburgerMenu.jsx";
 import styles from "./page.module.css";
 
 export default function ContactPage() {
   return (
     <div className={styles.contactWrapper}>
-      <header className={styles.header}>
-        <NavBarBurger />
-      </header>
-
       <main className={styles.mainContent}>
         <div className={styles.textSection}>
           <h1>Contact Us</h1>

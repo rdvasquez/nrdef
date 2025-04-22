@@ -1,109 +1,89 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
-/* Container for the entire page */
+/* === Container Styling === */
 .aboutContainer {
-  display: grid;
-  place-items: center; /* Centers content both vertically and horizontally */
-  height: 100vh;
-  padding: 5px;
-  box-sizing: border-box;
-}
-
-/* Content container using Grid */
-.content {
-  display: grid;
-  grid-template-columns: 1fr; /* Single column layout for small screens */
-  gap: 20px;
-  max-width: 900px;
-  width: 100%;
-  padding: 10px;
-}
-
-/* Heading 1 styles */
-.content1 {
-  font-size: 25px;
-  font-weight: 700;
-  color: #333;
-  text-align: center;
-  line-height: 1.2;
-}
-
-/* Description paragraph styles */
-.description {
-  font-size: 24px;
-  color: #555;
-  line-height: 1.9;
-  text-align: justify;
-  letter-spacing: 0.5px;
-}
-
-/* Heading 2 styles */
-.content2 {
-  font-size: 22px;
-  font-weight: 600;
-  color: #333;
-  text-align: center;
-}
-
-/* List styles */
-ul.list {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  min-height: 100vh;
   display: flex;
-  gap: 10px; /* Space between list items */
-  padding-left: 20px; /* Indentation for list */
-  font-size: 18px;
-  color: #555;
-  list-style-type: none; /* Remove default bullets */
+  justify-content: center;
+  align-items: flex-start;
 }
 
-ul.list li {
-  align-items: center;
-  position: relative;
+.content {
+  max-width: 800px;
+  width: 100%;
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* === Headings === */
+.content1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #2e2e2e;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+.content2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #3b3a30;
+}
+
+/* === Paragraph === */
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin-bottom: 2rem;
+}
+
+/* === List Styling === */
+.list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  font-size: 1.05rem;
   line-height: 1.6;
+  color: #444;
 }
 
-ul.list li::before {
-  content: "• ";
-  position: absolute;
-  left: -25px; /* Position the bullet point */
-  color: #007bff; /* Blue bullet points */
-  font-size: 1.5rem;
-}
-
-/* Media Query for larger screens */
-@media (min-width: 768px) {
+/* === Responsive Typography === */
+@media (max-width: 768px) {
   .content {
-    grid-template-columns: 1fr 1fr; /* Two columns layout for larger screens */
-    grid-template-rows: auto;
-    gap: 40px;
+    padding: 2rem 1.5rem;
   }
 
   .content1 {
-    font-size: 3rem; /* Increase heading size for larger screens */
-  }
-
-  .description {
-    font-size: 1.3rem; /* Increase font size for description */
+    font-size: 1.8rem;
   }
 
   .content2 {
-    font-size: 2rem; /* Increase size for subheading */
+    font-size: 1.4rem;
   }
 
-  ul.list {
-    padding-left: 40px; /* More space for list indentation */
+  .description,
+  .list {
+    font-size: 1rem;
   }
 }
 
-/* Media Query for very large screens (large desktops) */
-@media (min-width: 1300px) {
-  .content {
-    max-width: 1200px; /* Max width for larger desktops */
-  }
+.content {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
 
-  .content1 {
-    font-size: 3.5rem; /* Bigger font size for very large screens */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
   }
-
-  .content2 {
-    font-size: 2.2rem; /* Adjust size for larger subheading */
+  to {
+    transform: translateY(0px);
+    opacity: 1;
   }
 }

@@ -2,6 +2,8 @@ import React from "react";
 import "./Header.css";
 import Link from "next/link";
 import Image from "next/image";
+import { ClerkLoaded, ClerkLoading } from "@clerk/nextjs";
+
 import {
   SignInButton,
   SignedIn,
@@ -37,10 +39,11 @@ export default async function Header() {
             alt="logo"
           />
         </div>
-
-        <div className="header-verse">
-          “How beautiful are the feet of those who bring good news.” <br />
-          Romans 10:15 <br />
+        <div className="header-lower">
+          <div className="header-verse">
+            “How beautiful are the feet of those who bring good news.” <br />
+            Romans 10:15 <br />
+          </div>
         </div>
 
         <div className="hamburger-only">
@@ -53,25 +56,28 @@ export default async function Header() {
           <Link href="/resources">Resources</Link>
           <Link href="/events">Events</Link>
           <Link href="/contact">Contact</Link>
+
           <div className="signIn">
-            <SignedIn>
-              <IsAdmin></IsAdmin>
-            </SignedIn>
-            <SignedIn>
-              <span>
-                Welcome {user?.firstName} {user?.lastName}
-              </span>
-              <UserButton />
-            </SignedIn>
-            <SignedIn>
-              <SignOutButton />
-              <button className="joinUs">
-                <Link href="/users">Join us</Link>
-              </button>
-            </SignedIn>
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
+            <ClerkLoading>
+              <span className="auth-placeholder">Loading...</span>
+            </ClerkLoading>
+
+            <ClerkLoaded>
+              <SignedIn>
+                <IsAdmin />
+                <span>
+                  Welcome {user?.firstName} {user?.lastName}
+                </span>
+                <UserButton />
+                <SignOutButton />
+                <button className="joinUs">
+                  <Link href="/users">Join us</Link>
+                </button>
+              </SignedIn>
+              <SignedOut>
+                <SignInButton />
+              </SignedOut>
+            </ClerkLoaded>
           </div>
         </nav>
       </header>

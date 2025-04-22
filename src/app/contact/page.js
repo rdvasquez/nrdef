@@ -1,10 +1,22 @@
 import ContactForm from "@/components/Contact";
+import styles from "./page.module.css";
 
 export default function ContactPage() {
   return (
-    <>
-      <h1>This is Contact page</h1>
-      <h2>Contact us here</h2>
-    </>
+    <div className={styles.contactWrapper}>
+      <main className={styles.mainContent}>
+        <div className={styles.textSection}>
+          <h1>Contact Us</h1>
+          <p>
+            We’d love to hear from you. Whether you have a question, feedback,
+            or just want to connect, feel free to drop us a message below.
+          </p>
+        </div>
+
+        <div className={styles.formSection}>
+          <ContactForm />
+        </div>
+      </main>
+    </div>
   );
 }

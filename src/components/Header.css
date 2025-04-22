@@ -29,19 +29,36 @@
 
 /* Logo Wrapper */
 .header-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 200px;
+}
+
+/* Responsive Logo Image */
+.header-logo .logo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(
+    0 2px 3px rgba(0, 0, 0, 0.3)
+  ); /* optional for better visibility */
+}
+
+/* Header Verse + Navbar Wrapper */
+.header-lower {
   position: absolute;
-  top: 1rem;
-  left: 1.5rem;
-  z-index: 3;
-  width: 15vw;
-  max-width: 180px;
-  min-width: 100px;
+  bottom: 2rem;
+  right: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  z-index: 2;
+
 }
 
 .header-verse {
-  position: absolute;
-  bottom: 80px;
-  right: 80px;
   max-width: 600px;
   font-family: serif;
   font-style: italic;
@@ -50,38 +67,42 @@
   text-align: center;
   padding: 1rem;
   color: #3b3a30;
-  z-index: 2;
 }
 
 /* Navigation Bar */
 .navbar {
   position: absolute;
-  font-size: 16px;
-  top: 20px;
-  right: 5%;
+  top: 1rem;
+  right: 1.5rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  z-index: 2;
+  gap: 1rem;
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  z-index: 3;
 }
 
 .navbar a {
   color: #3b3a30;
   text-decoration: none;
-  font-size: 1rem;
   font-weight: 600;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 0.4rem 0.6rem;
+  transition: all 0.3s ease;
+  border-radius: 5px;
 }
 
-.navbar a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+.navbar a:hover,
+.navbar a:focus {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #1a1a1a;
+  outline: none;
 }
 
 .hamburger-only {
   display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -109,6 +130,10 @@
   all: unset;
   cursor: pointer;
   font-weight: 500;
+  padding: 0.3rem;
+  border-radius: 3px;
+  color: #fff;
+  background: #007bff;
   transition: all 0.25s ease-in-out;
   border: 1px solid transparent;
 }
@@ -124,9 +149,15 @@
   color: inherit;
 }
 
+/* Sign-In/Sign-Out */
+.signIn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 /* Custom style for the "Join Us" button */
 .joinUs {
-  background-color: #8b4513;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -140,4 +171,61 @@
   background-color: transparent;
   color: #3b3a30;
   border: 1px #3b3a30;
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    right: 2%;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-lower {
+    right: 1rem;
+    bottom: 1rem;
+    align-items: center;
+  }
+
+  .header-verse {
+    text-align: center;
+  }
+
+  .navbar {
+    display: none; /* swap to hamburger */
+  }
+
+  .hamburger-only {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    z-index: 4;
+  }
+}
+
+/* Tablet Breakpoint */
+@media (max-width: 1024px) {
+  .header-logo {
+    max-width: 200px;
+  }
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 768px) {
+  .header-logo {
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 25vw;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .header-logo {
+    top: 0.4rem;
+    left: 0.4rem;
+    width: 35vw;
+  }
 }

@@ -61,6 +61,7 @@
   color: #3b3a30;
   padding: 1rem;
   word-break: break-word;
+  align-items: center;
 }
 
 /* Bottom section: links & text */

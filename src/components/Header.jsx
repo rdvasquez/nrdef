@@ -1,7 +1,7 @@
 import React from "react";
-import "./Header.css";
 import Link from "next/link";
 import Image from "next/image";
+import "./Header.css";
 import { ClerkLoaded, ClerkLoading } from "@clerk/nextjs";
 
 import {
@@ -21,15 +21,7 @@ export default async function Header() {
   return (
     <>
       <header className="header-container">
-        <div className="headerimage">
-          <Image
-            className="header-image"
-            src="/bible.webp"
-            layout="fill"
-            objectFit="cover"
-            alt="fellowship"
-          />
-        </div>
+        <div className="header-bg"></div>
         <div className="header-logo">
           <Image
             className="logo"
@@ -41,8 +33,8 @@ export default async function Header() {
         </div>
         <div className="header-lower">
           <div className="header-verse">
-            “How beautiful are the feet of those who bring good news.” <br />
-            Romans 10:15 <br />
+            “How beautiful are the feet of those who bring good news.” Romans
+            10:15
           </div>
         </div>
 

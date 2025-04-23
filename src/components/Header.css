@@ -10,6 +10,7 @@
 .header-container {
   position: relative;
   min-height: 400px;
+
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -19,6 +20,8 @@
   overflow: hidden;
   color: #333;
 }
+/* display: flex;
+  justify-content: flex-start;*/
 
 .header-grid {
   display: grid;

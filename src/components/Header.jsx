@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import "./Header.css";
 import { ClerkLoaded, ClerkLoading } from "@clerk/nextjs";
+import { pool } from "@/lib/db";
 
 import {
   SignInButton,
@@ -21,6 +22,7 @@ export default async function Header() {
   return (
     <>
       <header className="header-container">
+
         <div className="header-grid"></div>
         <div className="header-logo">
           <Image
@@ -39,7 +41,7 @@ export default async function Header() {
         </div>
 
         <div className="hamburger-only">
-          <HamburgerMenu />
+          <HamburgerMenu userRole={getRole()} />
         </div>
 
         <nav className="navbar">
@@ -47,6 +49,7 @@ export default async function Header() {
           <Link href="/about">About</Link>
           <Link href="/resources">Resources</Link>
           <Link href="/events">Events</Link>
+          <IsAdmin />
           <Link href="/contact">Contact</Link>
 
           <div className="signIn">
@@ -56,7 +59,6 @@ export default async function Header() {
 
             <ClerkLoaded>
               <SignedIn>
-                <IsAdmin />
                 <span>
                   Welcome {user?.firstName} {user?.lastName}
                 </span>
@@ -77,4 +79,27 @@ export default async function Header() {
       </header>
     </>
   );
+}
+async function getRole() {
+  const currUser = await currentUser();
+  console.log("currUser123-->" + currUser.id);
+
+  let userRole;
+  try {
+    const [rows] = await pool.query(`SELECT role FROM Users WHERE clerk_id=?`, [
+      currUser.id,
+    ]);
+    console.log("ROWS-->" + rows);
+
+    {
+      rows.map((row) => {
+        userRole = row.role;
+        console.log("User Role1-->" + userRole);
+      });
+    }
+  } catch (err) {
+    console.error("DB access error:", err);
+  }
+
+  return userRole;
 }

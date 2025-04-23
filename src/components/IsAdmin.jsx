@@ -1,3 +1,5 @@
+"use server";
+
 import { currentUser } from "@clerk/nextjs/server";
 import { pool } from "@/lib/db";
 import Link from "next/link";

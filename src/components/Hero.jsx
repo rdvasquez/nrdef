@@ -22,7 +22,7 @@ export default function heroSection() {
           height={300}
           alt="Our Statement of Faith"
         />
-        <Link className="Statement-of-Faith" href="#" target="_blank">
+        <Link className="Statement-of-Faith" href="/statement-of-faith">
           View our Statement of Faith
         </Link>
       </div>

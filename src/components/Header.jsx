@@ -22,7 +22,8 @@ export default async function Header() {
   return (
     <>
       <header className="header-container">
-        {/* <div className="header-bg"></div> */}
+
+        <div className="header-grid"></div>
         <div className="header-logo">
           <Image
             className="logo"
@@ -32,11 +33,11 @@ export default async function Header() {
             alt="logo"
           />
         </div>
-        <div className="header-lower">
-          <div className="header-verse">
-            “How beautiful are the feet of those who bring good news.” Romans
-            10:15
-          </div>
+
+        <div className="header-verse">
+          “How beautiful are the feet of those who bring good news.”
+          <br />
+          Romans 10:15
         </div>
 
         <div className="hamburger-only">

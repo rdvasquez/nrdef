@@ -21,13 +21,33 @@ export default function Footer() {
           />
         </div>
 
-        <div className="footerverse">
-          “How beautiful are the feet of those who bring good news.” <br />
-          Romans 10:15
+        <div className="footer-verse-partner">
+          <div className="footerverse">
+            “How beautiful are the feet of those who bring good news.” <br />
+            Romans 10:15
+          </div>
         </div>
       </div>
 
       <div className="rightside-footer">
+        <div className="footer-partner">
+          <span className="partner-label">Partnered with:</span>
+          <a
+            href="https://ceec.info/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="partner-logo-link"
+          >
+            <Image
+              className="partner-logo"
+              src="/ceec.png"
+              width={150}
+              height={150}
+              alt="CEEC Logo"
+            />
+          </a>
+        </div>
+
         <nav className="footer-links">
           <Link href="/copyright">Copyright Policy</Link>
           <Link href="/privacy">Privacy Policy</Link>

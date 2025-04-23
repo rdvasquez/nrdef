@@ -12,7 +12,18 @@ import {
   SignOutButton,
 } from "@clerk/nextjs";
 
-export default function HamburgerMenu() {
+export default function HamburgerMenu({ userRole }) {
+  const [resolvedUserRole, setResolvedUserRole] = useState(null);
+
+  React.useEffect(() => {
+    if (userRole instanceof Promise) {
+      userRole.then((role) => setResolvedUserRole(role));
+    } else {
+      setResolvedUserRole(userRole);
+    }
+  }, [userRole]);
+
+  console.log("userRole---->", resolvedUserRole);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
@@ -40,12 +51,16 @@ export default function HamburgerMenu() {
           <Link href="/events" onClick={toggleMenu}>
             Events
           </Link>
+          {resolvedUserRole === "Admin" && (
+            <Link href="/admin" onClick={toggleMenu}>
+              Admin
+            </Link>
+          )}
           <Link href="/contact" onClick={toggleMenu}>
             Contact
           </Link>
           <div className="signIn-hamburger">
             <SignedIn>
-              {/* <IsAdmin /> */}
               {/* <span>
                 Welcome {user?.firstName} {user?.lastName}
               </span> */}

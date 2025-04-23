@@ -10,15 +10,15 @@
 .header-container {
   position: relative;
   min-height: 400px;
-  display: flex;
-  justify-content: flex-start;
   padding: 2rem 1rem;
   background-image: url("/bible.webp");
   background-size: cover;
-  background-position: center; /* shift cross into view */
+  background-position: center; /*shift cross into view */
   color: #333;
   overflow: hidden;
 }
+/* display: flex;
+  justify-content: flex-start;*/
 
 /* Header Image (background) */
 .header-bg {
@@ -43,6 +43,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  height: auto;
 }
 
 /* Responsive Logo Image */

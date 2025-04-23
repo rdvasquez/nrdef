@@ -22,7 +22,6 @@ export default async function Header() {
   return (
     <>
       <header className="header-container">
-
         <div className="header-grid"></div>
         <div className="header-logo">
           <Image
@@ -49,7 +48,7 @@ export default async function Header() {
           <Link href="/about">About</Link>
           <Link href="/resources">Resources</Link>
           <Link href="/events">Events</Link>
-          <IsAdmin />
+
           <Link href="/contact">Contact</Link>
 
           <div className="signIn">
@@ -69,6 +68,7 @@ export default async function Header() {
                     Join us
                   </Link>
                 </button>
+                <IsAdmin />
               </SignedIn>
               <SignedOut>
                 <SignInButton />

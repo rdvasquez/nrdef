@@ -51,11 +51,7 @@ export default function HamburgerMenu({ userRole }) {
           <Link href="/events" onClick={toggleMenu}>
             Events
           </Link>
-          {resolvedUserRole === "Admin" && (
-            <Link href="/admin" onClick={toggleMenu}>
-              Admin
-            </Link>
-          )}
+
           <Link href="/contact" onClick={toggleMenu}>
             Contact
           </Link>
@@ -68,6 +64,11 @@ export default function HamburgerMenu({ userRole }) {
               <button className="joinUs-hamburger">
                 <Link href="/users">Join us</Link>
               </button>
+              {resolvedUserRole === "Admin" && (
+                <Link href="/admin" onClick={toggleMenu}>
+                  Admin
+                </Link>
+              )}
               <SignOutButton />
             </SignedIn>
             <SignedOut>

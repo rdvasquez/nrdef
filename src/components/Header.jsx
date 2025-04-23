@@ -63,7 +63,9 @@ export default async function Header() {
                 <UserButton />
                 <SignOutButton />
                 <button className="joinUs">
-                  <Link href="/users">Join us</Link>
+                  <Link className="joinUs" href="/users">
+                    Join us
+                  </Link>
                 </button>
               </SignedIn>
               <SignedOut>

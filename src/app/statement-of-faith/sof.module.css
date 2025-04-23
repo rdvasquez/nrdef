@@ -1,0 +1,48 @@
+.sofcontainer {
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgba(216, 223, 223, 0.3);
+}
+.softitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.softext {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #333;
+  max-width: 800px;
+  text-align: left;
+}
+.sofbutton {
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.sofbutton:hover {
+  background-color: #0056b3;
+}
+.sofbutton:focus {
+  outline: none;
+}
+.sofbutton:active {
+  background-color: #004085;
+}

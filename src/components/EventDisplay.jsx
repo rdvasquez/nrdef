@@ -13,6 +13,7 @@ export default async function EventDisplay() {
         <header className="event-header">
           <h2>Upcoming Events</h2>
           <p>Join us and stay informed</p>
+          <p>Click on the event to register</p>
         </header>
 
         <div className="event-grid">
@@ -24,7 +25,7 @@ export default async function EventDisplay() {
               >
                 <figure className="event-image-container">
                   <Image
-                    src={`/events/${event.image_name || "bible-fellow.png"}`}
+                    src={`/${event.image}`}
                     width={400}
                     height={250}
                     alt={`${event.title} image`}

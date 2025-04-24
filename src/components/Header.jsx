@@ -33,9 +33,8 @@ export default async function Header() {
         </div>
 
         <div className="header-verse">
-          “How beautiful are the feet of those who bring good news.”
-          <br />
-          Romans 10:15
+          “How beautiful are the feet of those who bring good news.” Romans
+          10:15
         </div>
 
         <div className="hamburger-only">

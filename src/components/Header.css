@@ -20,8 +20,6 @@
   overflow: hidden;
   color: #333;
 }
-/* display: flex;
-  justify-content: flex-start;*/
 
 .header-grid {
   display: grid;

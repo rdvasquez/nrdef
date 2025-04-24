@@ -3,9 +3,6 @@
 import mysql2 from "mysql2/promise";
 import dotenv from "dotenv";
 
-// const mysql2 = require("mysql2/promise");
-// Create a connection pool
-
 dotenv.config();
 const pool = mysql2.createPool({
   connectionLimit: 10,

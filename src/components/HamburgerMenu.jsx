@@ -57,10 +57,12 @@ export default function HamburgerMenu({ userRole }) {
           </Link>
           <div className="signIn-hamburger">
             <SignedIn>
-              {/* <span>
-                Welcome {user?.firstName} {user?.lastName}
-              </span> */}
-              {/* <UserButton /> */}
+              <div className="user-button-hamburger">
+                <span>
+                  Hello {user?.firstName} {user?.lastName}
+                </span>
+                <UserButton />
+              </div>
               <button className="joinUs-hamburger">
                 <Link href="/users" onClick={toggleMenu}>
                   Join us

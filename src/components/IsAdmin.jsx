@@ -5,8 +5,9 @@ import Link from "next/link";
 
 export default async function IsAdmin() {
   const currUser = await currentUser();
-  console.log("currUser123-->" + currUser.id);
-
+  if (!currUser) {
+    return false;
+  }
   let userRole;
   try {
     const [rows] = await pool.query(`SELECT role FROM Users WHERE clerk_id=?`, [

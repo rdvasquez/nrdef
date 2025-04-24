@@ -114,6 +114,10 @@
   color: inherit;
 }
 
+.user-button-hamburger {
+  border: 2px solid #b48113;
+}
+
 /* Show hamburger only on small screens */
 @media (max-width: 768px) {
   .hamburger-wrapper {

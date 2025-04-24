@@ -15,7 +15,7 @@ export default function About() {
         </p>
 
         <h2 className={styles.content2}>Our purpose as an organisation is:</h2>
-        <ul className="list">
+        <ul className={styles.list}>
           <li>To unite evangelical ministers and congregation members</li>
           <li>To promote evangelical faith, mission, and ministry</li>
           <li>

@@ -62,17 +62,19 @@ export default function HamburgerMenu({ userRole }) {
               </span> */}
               {/* <UserButton /> */}
               <button className="joinUs-hamburger">
-                <Link href="/users">Join us</Link>
+                <Link href="/users" onClick={toggleMenu}>
+                  Join us
+                </Link>
               </button>
               {resolvedUserRole === "Admin" && (
                 <Link href="/admin" onClick={toggleMenu}>
                   Admin
                 </Link>
               )}
-              <SignOutButton />
+              <SignOutButton onClick={toggleMenu} />
             </SignedIn>
             <SignedOut>
-              <SignInButton />
+              <SignInButton onClick={toggleMenu} />
             </SignedOut>
           </div>
         </nav>

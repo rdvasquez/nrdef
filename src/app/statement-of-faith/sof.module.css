@@ -20,13 +20,17 @@
   margin-bottom: 1rem;
   color: #333;
 }
+
 .softext {
-  font-size: 1.1rem;
-  line-height: 1.5;
+
+  font-size: 1.2rem;
+  line-height: 1.6;
   color: #333;
   max-width: 800px;
   text-align: left;
+  margin-bottom: 1.5rem;
 }
+
 .sofbutton {
   margin-top: 2rem;
   padding: 0.5rem 4rem;

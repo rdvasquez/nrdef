@@ -75,10 +75,12 @@ export default async function UserRegistrationForm() {
   }
   return (
     <>
-      <h1>Welcome to our community</h1>
+      <h1 className="welcome-title">Welcome to our community</h1>
       <form action={handleSubmit}>
-        <fieldset>
-          <legend className="caption">Please fill the form to join us</legend>
+        <fieldset className="infoset-1">
+          <legend className="userregformcaption">
+            Please fill the form to join us
+          </legend>
           <div className="userinfo">
             <label htmlFor="title">
               <span>Title </span>
@@ -134,8 +136,8 @@ export default async function UserRegistrationForm() {
           </div>
         </fieldset>
 
-        <fieldset>
-          <legend className="caption">Contact information</legend>
+        <fieldset className="infoset-2">
+          <legend className="userregformcaption">Contact information</legend>
           <div className="userinfo">
             <label htmlFor="addressline1">House/Apartment No.</label>
             <input
@@ -175,7 +177,7 @@ export default async function UserRegistrationForm() {
               name="postcode"
               id="postcode"
               pattern="[A-Za-z]{1,2}[0-9Rr]{1,2} ?[0-9][A-Za-z]{2}"
-              placeholder="Enter Post Code AA1 1AA"
+              placeholder="Enter Post Code - AA1 1AA"
               required
             />
             <label htmlFor="phonenumber">Phone number</label>
@@ -189,9 +191,9 @@ export default async function UserRegistrationForm() {
             <input type="text" name="userId" value={userId} hidden readOnly />
           </div>
         </fieldset>
-        <div className="submit-button">
-          <button className="userdetails-button">Submit</button>
-        </div>
+        {/* <div className="button-container"> */}
+        <button className="userdetails-button">Submit</button>
+        {/* </div> */}
       </form>
     </>
   );

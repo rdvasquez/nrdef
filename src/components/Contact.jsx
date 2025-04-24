@@ -54,10 +54,10 @@ export default async function ContactForm() {
           <textarea
             id="message"
             name="message"
-            placeholder="Type your message here"
+            placeholder="Enter your message here"
             required
           ></textarea>
-          <button className="contact-button">Submit</button>
+          <button className="contact-button">Send</button>
         </form>
       </div>
     </div>

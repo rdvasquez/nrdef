@@ -22,6 +22,7 @@
 }
 
 .softext {
+
   font-size: 1.2rem;
   line-height: 1.6;
   color: #333;
@@ -32,8 +33,10 @@
 
 .sofbutton {
   margin-top: 2rem;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
+  padding: 0.5rem 4rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
   background-color: #007bff;
   color: white;
   border: none;
@@ -41,7 +44,7 @@
   cursor: pointer;
 }
 .sofbutton:hover {
-  background-color: #0056b3;
+  background-color: #5cc5f2;
 }
 .sofbutton:focus {
   outline: none;
